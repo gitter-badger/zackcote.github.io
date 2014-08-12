@@ -1,102 +1,72 @@
 var gulp          = require('gulp'),
-autoprefixer  = require('gulp-autoprefixer'),
-cache         = require('gulp-cache'),
-clean         = require('gulp-clean'),
-concat        = require('gulp-concat'),
-webserver     = require('gulp-webserver'),
-gutil         = require('gulp-util');
-imagemin      = require('gulp-imagemin'),
-jshint        = require('gulp-jshint'),
-livereload    = require('gulp-livereload'),
-minifycss     = require('gulp-minify-css'),
-notify        = require('gulp-notify'),
-open          = require("gulp-open"),
-plumber       = require('gulp-plumber'),
-rename        = require('gulp-rename'),
-stylus        = require('gulp-stylus'),
-uglify        = require('gulp-uglify'),
-shell         = require('gulp-shell');
+    autoprefixer  = require('gulp-autoprefixer'),
+    browserSync   = require('browser-sync'),
+    concat        = require('gulp-concat'),
+    imagemin      = require('gulp-imagemin'),
+    jshint        = require('gulp-jshint'),
+    minifycss     = require('gulp-minify-css'),
+    notify        = require('gulp-notify'),
+    open          = require("gulp-open"),
+    plumber       = require('gulp-plumber'),
+    rename        = require('gulp-rename'),
+    size          = require('gulp-filesize'),
+    stylus        = require('gulp-stylus'),
+    uglify        = require('gulp-uglify');
 
-var onError = function (err) {  
-  gutil.beep();
-  console.log(err);
-  return notify().write(err);
-};
+//need a shell task that "jekyll build"s and then triggers browserSync.
 
-gulp.task('stylus', function() {
-  return gulp.src('src/stylus/main.styl')
-  .pipe(plumber(onError))
+//need to make css, imgs, and js trigger browsersync
+
+gulp.task('style', function() {
+  return gulp.src('src/styles/main.styl')
+  .pipe(plumber())
   .pipe(stylus())
-  .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+  .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
   .pipe(rename({suffix: '.min'}))
   .pipe(minifycss())
-  .pipe(gulp.dest('assets/css'))
-  .pipe(gulp.dest('_site/assets/css'))
-  .pipe(notify({ message: 'Stylus Compiled, Prefixed, and Minified!' }))
+  .pipe(gulp.dest('_site/assets/css/'))
+  .pipe(gulp.dest('assets/css/'))
+  .pipe(notify("styles minified."))
+  .pipe(size());
 });
 
 gulp.task('scripts', function() {
   return gulp.src('src/scripts/**/*.js')
-  .pipe(plumber(onError))
+  .pipe(plumber())
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
   .pipe(concat('main.js'))
-  .pipe(gulp.dest('assets/js'))
   .pipe(rename({suffix: '.min'}))
   .pipe(uglify())
   .pipe(gulp.dest('assets/js'))
   .pipe(gulp.dest('_site/assets/js'))
-  .pipe(notify({ message: 'Scripts Concatenated and Uglified!' }))
+  .pipe(notify("scripts done."))
+  .pipe(size());
 });
 
 gulp.task('images', function() {
-  return gulp.src('src/img/**/*')
-  .pipe(plumber(onError))
-  .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+  return gulp.src('src/images/**/*')
+  .pipe(plumber())
+  .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
   .pipe(gulp.dest('assets/img'))
   .pipe(gulp.dest('_site/assets/img'))
-  .pipe(notify({ message: 'Images Compressed!' }))
+  .pipe(notify({ message: 'images done.' }))
 });
-
-gulp.task('webserver', function() {
-  gulp.src('_site')
-    .pipe(webserver({
-      livereload: true
-    }));
-});
-
-gulp.task('open', ['jekyll'], function(){
-  var options = {
-    url: "http://localhost:8000",
-    app: "chrome"
-  };
-  gulp.src("*.html")
-  .pipe(open("", options));
-});
-
-gulp.task('jekyll', shell.task('jekyll build'));
-
 
 gulp.task('watch', function() {
-
-  gulp.watch('src/stylus/**/*.styl', ['stylus']);
-
+  gulp.watch('src/styles/**/*.styl', ['style']);
   gulp.watch('src/scripts/**/*.js', ['scripts']);
-
-  gulp.watch('src/img/**/*', ['images']);
-
+  gulp.watch('src/images/**/*.*', ['images']);
   gulp.watch([
-    '_includes/**/*.html',
-    '_layouts/**/*.html',
-    '_posts/**/*',
-    'index.html'
-    ], ['jekyll']);
+      '*.html',
+      '_includes/**/*.*',
+      '_layouts/**/*.*',
+      '_posts/**/*.*'],
+    ['jekyll']
+    );
 
 });
 
-//Default Task
+gulp.task('sources', ['style','scripts','images']);
 
-gulp.task('default', ['webserver', 'open'], function() {
-  gulp.start('stylus', 'scripts', 'images', 'watch');
-});
-
+gulp.task('default', ['watch']);
