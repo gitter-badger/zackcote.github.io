@@ -1,11 +1,15 @@
 # Site settings
-title: Zack Cote | Designer in Providence, RI
-email: zackcote@gmail.com
-description: "Zack Cote, a designer in Providence, RI"
-url: "zackcote.com"
+title: Zack Cote
+email: zackwcote@gmail.com
+description: "a designer in providence, ri"
 baseurl: ""
+url: "http://zackcote.com"
+twitter_username: zackcote_
+github_username:  zackcote
+
 
 # Build settings
+exclude: ['README.md', 'src/', 'node_modules', 'package.json', 'Gruntfile.js', '*.command']
 markdown: kramdown
-exclude: ['README.md', 'src','node_modules', 'package.json', 'Gruntfile.js', '*.command']
-highlighter: false
+permalink: pretty
+highlighter: null

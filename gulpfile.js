@@ -1,72 +1,55 @@
-var gulp          = require('gulp'),
-    autoprefixer  = require('gulp-autoprefixer'),
-    browserSync   = require('browser-sync'),
-    concat        = require('gulp-concat'),
-    imagemin      = require('gulp-imagemin'),
-    jshint        = require('gulp-jshint'),
-    minifycss     = require('gulp-minify-css'),
-    notify        = require('gulp-notify'),
-    open          = require("gulp-open"),
-    plumber       = require('gulp-plumber'),
-    rename        = require('gulp-rename'),
-    size          = require('gulp-filesize'),
-    stylus        = require('gulp-stylus'),
-    uglify        = require('gulp-uglify');
+var gulp        = require('gulp');
+var browserSync = require('browser-sync');
+var stylus        = require('gulp-stylus');
+var prefix      = require('gulp-autoprefixer');
+var cp          = require('child_process');
+var minifyCSS   = require('gulp-minify-css');
 
-//need a shell task that "jekyll build"s and then triggers browserSync.
+var messages = {
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+};
 
-//need to make css, imgs, and js trigger browsersync
-
-gulp.task('style', function() {
-  return gulp.src('src/styles/main.styl')
-  .pipe(plumber())
-  .pipe(stylus())
-  .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
-  .pipe(rename({suffix: '.min'}))
-  .pipe(minifycss())
-  .pipe(gulp.dest('_site/assets/css/'))
-  .pipe(gulp.dest('assets/css/'))
-  .pipe(notify("styles minified."))
-  .pipe(size());
+gulp.task('jekyll-build', function (done) {
+    browserSync.notify(messages.jekyllBuild);
+    return cp.spawn('jekyll.bat', ['build'], {stdio: 'inherit'}).on('close', done);
 });
 
-gulp.task('scripts', function() {
-  return gulp.src('src/scripts/**/*.js')
-  .pipe(plumber())
-  .pipe(jshint('.jshintrc'))
-  .pipe(jshint.reporter('default'))
-  .pipe(concat('main.js'))
-  .pipe(rename({suffix: '.min'}))
-  .pipe(uglify())
-  .pipe(gulp.dest('assets/js'))
-  .pipe(gulp.dest('_site/assets/js'))
-  .pipe(notify("scripts done."))
-  .pipe(size());
+gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+    browserSync.reload();
 });
 
-gulp.task('images', function() {
-  return gulp.src('src/images/**/*')
-  .pipe(plumber())
-  .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-  .pipe(gulp.dest('assets/img'))
-  .pipe(gulp.dest('_site/assets/img'))
-  .pipe(notify({ message: 'images done.' }))
+gulp.task('browser-sync', ['stylus', 'jekyll-build'], function() {
+    browserSync({
+        server: {
+            baseDir: '_site'
+        }
+    });
 });
 
-gulp.task('watch', function() {
-  gulp.watch('src/styles/**/*.styl', ['style']);
-  gulp.watch('src/scripts/**/*.js', ['scripts']);
-  gulp.watch('src/images/**/*.*', ['images']);
-  gulp.watch([
-      '*.html',
-      '_includes/**/*.*',
-      '_layouts/**/*.*',
-      '_posts/**/*.*'],
-    ['jekyll']
-    );
-
+gulp.task('stylus', function () {
+    gulp.src('src/stylus/main.styl')
+        .pipe(stylus({
+            includePaths: ['stylus'],
+            onError: browserSync.notify
+        }))
+        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(minifyCSS())
+        .pipe(gulp.dest('_site/assets/css'))
+        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('assets/css'));
 });
 
-gulp.task('sources', ['style','scripts','images']);
+/**
+ * Watch scss files for changes & recompile
+ * Watch html/md files, run jekyll & reload BrowserSync
+ */
+gulp.task('watch', function () {
+    gulp.watch('src/stylus/**/*.styl', ['stylus']);
+    gulp.watch(['index.html', '_layouts/*.html', '_posts/*', '_includes/*', '_drafts/*'], ['jekyll-rebuild']);
+});
 
-gulp.task('default', ['watch']);
+/**
+ * Default task, running just `gulp` will compile the sass,
+ * compile the jekyll site, launch BrowserSync & watch files.
+ */
+gulp.task('default', ['browser-sync', 'watch']);
