@@ -22,10 +22,22 @@ body
 	height auto
 	line-height 1.3rem
 
+.wrap
+	display flex
+	flex-direction column
+	min-height 100vh
+
 .header
 	color darken(white, 10%)
-	background darken(blue, 89.7%)
+	padding 2rem 1rem .5rem 1rem
+	background zack-blue
 	max-width 35rem
+	+above(50rem)
+		padding 2rem 3rem 1rem 3rem
+
+.content
+	flex 1
+		
 
 // .content
 // .footer
