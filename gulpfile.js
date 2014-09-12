@@ -27,7 +27,7 @@ gulp.task('browser-sync', ['stylus', 'jekyll-build'], function() {
 });
 
 gulp.task('stylus', function () {
-    gulp.src('src/stylus/main.styl')
+    gulp.src('src/stylus/index.styl')
         .pipe(stylus({
             includePaths: ['stylus'],
             onError: browserSync.notify
