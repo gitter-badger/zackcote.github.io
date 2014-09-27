@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
-<ul class="posts-list">
+<ul class="post-list">
     <h3>Latest Posts</h3>
     {% for post in site.posts %}
-    <li>
+    <li class="post-list__post">
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     </li>
