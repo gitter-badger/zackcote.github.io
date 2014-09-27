@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2014-07-22 13:39:45
+title:  "Welcome to Jekyll-Kit."
+date:   2014-09-23 09:11:03
 categories: jekyll update
 ---
 
@@ -20,5 +20,5 @@ print_hi('Tom')
 
 Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
 
-[jekyll-gh]: https://github.com/jekyll/jekyll
+[jekyll-gh]: https://github.com/mojombo/jekyll
 [jekyll]:    http://jekyllrb.com

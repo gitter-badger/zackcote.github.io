@@ -1,135 +1,101 @@
-/**
- * Style an element as a column with a gutter.
- * @param {number} [ratios=1] - A width relative to its container as a fraction.
- * @param {number} [offset=0] - A offset specified as a fraction (see ratios).
- * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
- * @param {number} [uncycle=0] - Undo a previous cycle vlue to allow for a new one.
- * @param {number} [gutter=jeet.gutter] - Specifiy the gutter width as a percentage of the containers width.
- */
+// Columns with Gutters
 column(ratios = 1, offset = 0, cycle = 0, uncycle = 0, gutter = jeet.gutter)
-  side = jeet-get-layout-direction()
-  opposite-side = opposite-position(side)
-  column-widths = jeet-get-column(ratios, gutter)
-  margin-last = 0
-  margin-l = margin-last
-  margin-r = column-widths[1]
-
+  side = -get_layout_direction()
+  column_widths = -get_column(ratios, gutter)
+  margin_l = margin_last = 0
+  margin_r = column_widths[1]
   unless offset == 0
     if offset < 0
       offset *= -1
-      offset = jeet-get-column(offset, column-widths[1])[0]
-      margin-r = margin-last = offset + column-widths[1] * 2
+      offset = -get_column(offset, column_widths[1])[0]
+      margin_r = margin_last = offset + column_widths[1] * 2
     else
-      offset = jeet-get-column(offset, column-widths[1])[0]
-      margin-l = offset + column-widths[1]
-
+      offset = -get_column(offset, column_widths[1])[0]
+      margin_l = offset + column_widths[1]
   cf()
   float: side
   clear: none
   text-align: inherit
-  width: (column-widths[0])%
-  margin-{side}: (margin-l)%
-  margin-{opposite-side}: (margin-r)%
-
+  padding-left: 0
+  padding-right: 0
+  width: (column_widths[0])%
+  margin-{side}: (margin_l)%
+  margin-{opposite-position(side)}: (margin_r)%
   if uncycle != 0
     &:nth-child({uncycle}n)
-      margin-{opposite-side}: (margin-r)%
+      margin-{opposite-position(side)}: (margin_r)%
       float: side
-    &:nth-child({uncycle}n+1)
+    &:nth-child({uncycle}n + 1)
       clear: none
-
   if cycle != 0
     &:nth-child({cycle}n)
-      margin-{opposite-side}: (margin-last)%
-      float: opposite-side
-    &:nth-child({cycle}n+1)
+      margin-{opposite-position(side)}: (margin_last)%
+      float: opposite-position(side)
+    &:nth-child({cycle}n + 1)
       clear: both
-   else
+  else
     &:last-child
-      margin-{opposite-side}: (margin-last)%
+      margin-{opposite-position(side)}: (margin_last)%
 
-/**
- * An alias for the column mixin.
- */
 col = column
 
-/**
- * Style an element as a column without any gutters for a seamless row.
- * @param {number} [ratios=1] - A width relative to its container as a fraction.
- * @param {number} [offset=0] - A offset specified as a fraction (see ratios).
- */
-span(ratio = 1, offset = 0)
-  side = jeet-get-layout-direction()
-  opposite-side = opposite-position(side)
-  span-width = jeet-get-span(ratio)
-  margin-r = 0
-  margin-l = margin-r
-
+// Columns without Gutters
+span(ratio = 1, offset = 0, cycle = 0, uncycle = 0)
+  side = -get_layout_direction()
+  span_width = -get_span(ratio)
+  margin_l = margin_r = 0
   unless offset == 0
     if offset < 0
       offset *= -1
-      margin-r = jeet-get-span(offset)
+      margin_r = -get_span(offset)
     else
-      margin-l = jeet-get-span(offset)
-
+      margin_l = -get_span(offset)
   cf()
   float: side
   clear: none
+  padding-left: 0
+  padding-right: 0
   text-align: inherit
-  width: (span-width)%
-  margin-{side}: (margin-l)%
-  margin-{opposite-side}: (margin-r)%
+  width: (span_width)%
+  margin-{side}: (margin_l)%
+  margin-{opposite-position(side)}: (margin_r)%
+  if uncycle != 0
+    &:nth-child({uncycle}n)
+      float: side
+    &:nth-child({uncycle}n + 1)
+      clear: none
+  if cycle != 0
+    &:nth-child({cycle}n)
+      float: opposite-position(side)
+    &:nth-child({cycle}n + 1)
+      clear: both
 
-/**
- * Reorder columns without altering the HTML.
- * @param {number} [ratios=0] - Specify how far along you want the element to move.
- * @param {string} [col-or-span=column] - Specify whether the element has a gutter or not.
- * @param {number} [gutter=jeet.gutter] - Specifiy the gutter width as a percentage of the containers width.
- */
-shift(ratios = 0, col-or-span = column, gutter = jeet.gutter)
-  translate = ''
-  side = jeet-get-layout-direction()
-
+// Source Ordering
+shift(ratios = 0, col_or_span = column, gutter = jeet.gutter)
+  side = -get_layout_direction()
   if side == right
-    ratios = jeet-replace-nth(ratios, 0, ratios[0] * -1)
-
-  if col-or-span == column or col-or-span == col or col-or-span == c
-    column-widths = jeet-get-column(ratios, gutter)
-    translate = column-widths[0] + column-widths[1]
+    ratios = -replace_nth(ratios, 0, ratios[0] * -1)
+  if col_or_span == column or col_or_span == col or col_or_span == c
+    column_widths = -get_column(ratios, gutter)
+    translate = column_widths[0] + column_widths[1]
   else
-    translate = jeet-get-span(ratios)
-
+    translate = -get_span(ratios)
   position: relative
   left: (translate)%
-
-/**
- * Reset an element that has had shift() applied to it.
- */
 unshift()
   position: static
   left: 0
 
-/**
- * View the grid and its layers for easy debugging.
- */
+// Edit Mode
 edit()
   *
     background: rgba(#000, 5%)
 
-/**
- *  Alias for edit().
- */
-debug = edit
-
-/**
- * Horizontally center an element.
- * @param {number} [max-width=jeet.max-width] - The max width the element can be.
- * @param {number} [pad=0] - Specify the element's left and right padding.
- */
-center(max-width = jeet.max-width, pad = 0)
+// Horizontal Centering Block Elements
+center(max_width = 1410px, pad = 0)
   cf()
   width: auto
-  max-width: max-width
+  max-width: max_width
   float: none
   display: unquote('block')
   margin-right: auto
@@ -137,42 +103,22 @@ center(max-width = jeet.max-width, pad = 0)
   padding-left: pad
   padding-right: pad
 
-/**
- * Uncenter an element.
- */
-uncenter()
-  max-width: none
-  margin-right: 0
-  margin-left: 0
-  padding-left: 0
-  padding-right: 0
-
-/**
- * Stack an element so that nothing is either side of it.
- * @param {number} [pad=0] - Specify the element's left and right padding.
- * @param {bollean/string} [align=false] - Specify the text align for the element.
- */
+// Stacking/Unstacking Elements
 stack(pad = 0, align = false)
-  side = jeet-get-layout-direction()
-  opposite-side = opposite-position(side)
-
+  side = -get_layout_direction()
   display: unquote('block')
   clear: both
   float: none
   width: 100%
   margin-left: auto
   margin-right: auto
-
   &:first-child
     margin-{side}: auto
-
   &:last-child
-    margin-{opposite-side}: auto
-
+    margin-{opposite-position(side)}: auto
   if pad != 0
     padding-left: pad
     padding-right: pad
-
   if (align is not false)
     if (align == center) or (align == c)
       text-align: center
@@ -180,36 +126,26 @@ stack(pad = 0, align = false)
       text-align: left
     if (align == right) or (align == r)
       text-align: right
-
-/**
- * Unstack an element.
- */
 unstack()
-  side = jeet-get-layout-direction()
-  opposite-side = opposite-position(side)
-
-  text-align: side
+  side = -get_layout_direction()
   display: inline
   clear: none
   width: auto
   margin-left: 0
   margin-right: 0
-
   &:first-child
     margin-{side}: 0
-
   &:last-child
-    margin-{opposite-side}: 0
+    margin-{opposite-position(side)}: 0
+  if (jeet.layout-direction == RTL)
+    text-align: right
+  else
+    text-align: left
 
-/**
- * Center an element on either or both axes.
- * @requires A parent container with relative positioning.
- * @param {string} [direction=both] - Specify which axes to center the element on.
- */
+// Horizontal/Vertical/Both Alignment - Parent container needs position relative. IE9+
 align(direction = both)
   position: absolute
   transform-style: preserve-3d
-
   if (direction == horizontal) or (direction == h)
     left: 50%
     transform: translateX(-50%)
@@ -221,15 +157,11 @@ align(direction = both)
     left: 50%
     transform: translate(-50%, -50%)
 
-/**
- * Apply a clearfix to an element.
- */
+// Clearfix
 cf()
   *zoom: 1
-
   &:before, &:after
     content: ''
     display: table
-
   &:after
     clear: both

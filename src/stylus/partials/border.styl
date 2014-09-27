@@ -1,0 +1,16 @@
+.border
+    +above(beta)
+        min-height 100%
+        border-left solid border-width border-color
+        border-right solid border-width border-color
+        &:after, &:before
+            content ""
+            position fixed
+            left 0
+            bottom 0
+            height border-width
+            background border-color
+            width 100%
+        &:before
+            top 0
+            transform: translate(0,0);

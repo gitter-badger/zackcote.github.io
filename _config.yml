@@ -10,6 +10,5 @@ github_username:  zackcote
 
 # Build settings
 exclude: ['README.md', 'src/', 'node_modules', 'package.json', 'Gruntfile.js', '*.command']
-markdown: kramdown
 permalink: pretty
-highlighter: null
+highlighter: rouge

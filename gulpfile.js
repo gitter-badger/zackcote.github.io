@@ -1,14 +1,32 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync');
-var stylus        = require('gulp-stylus');
-var prefix      = require('gulp-autoprefixer');
-var cp          = require('child_process');
-var minifyCSS   = require('gulp-minify-css');
-
+"use strict";
+var gulp         = require('gulp');
+var cp           = require('child_process');
+var stylus       = require('gulp-stylus');
+var autoprefixer = require('gulp-autoprefixer');
+var plumber      = require('gulp-plumber');
+var jeet         = require('jeet');
+var rupture      = require('rupture');
+var csso         = require('gulp-csso');
+var rename       = require("gulp-rename");
+var browserSync  = require('browser-sync');
+var reload       = browserSync.reload;
+var del          = require('del');
+var size         = require('gulp-filesize');
+var imagemin     = require('gulp-imagemin');
+var pngcrush     = require('imagemin-pngcrush');
+var srcPath = {
+    styles: 'src/stylus/**/*.styl',
+    images: 'src/images/*'
+};
+var destPath = {
+    images: 'assets/images'
+};
 var messages = {
-    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+    jekyllBuild: 'Running: $ jekyll build'
 };
 
+
+//change cp.exec to cp.spawn if on windows
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn('jekyll.bat', ['build'], {stdio: 'inherit'}).on('close', done);
@@ -18,38 +36,52 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     browserSync.reload();
 });
 
-gulp.task('browser-sync', ['stylus', 'jekyll-build'], function() {
+gulp.task('browser-sync', function () {
     browserSync({
         server: {
-            baseDir: '_site'
-        }
+            baseDir: "_site/"
+        },
+        open: "external",
     });
 });
 
-gulp.task('stylus', function () {
-    gulp.src('src/stylus/index.styl')
-        .pipe(stylus({
-            includePaths: ['stylus'],
-            onError: browserSync.notify
-        }))
-        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(minifyCSS())
-        .pipe(gulp.dest('_site/assets/css'))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('assets/css'));
+gulp.task('asset-clean', function(cb) {
+  // You can use multiple globbing patterns as you would with `gulp.src`
+  del(['_site/assets/css/*', 'assets/css/*' ], cb);
 });
 
-/**
- * Watch scss files for changes & recompile
- * Watch html/md files, run jekyll & reload BrowserSync
- */
+gulp.task('images', function () {
+    return gulp.src(srcPath.images)
+        .pipe(imagemin({
+            optimizationLevel: 7,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngcrush()]
+        }))
+        .pipe(gulp.dest(destPath.images));
+});
+
+gulp.task('styles', ['asset-clean'], function () {
+    gulp.src('src/stylus/main.styl')
+        .pipe(plumber())
+        .pipe(stylus({
+            use: [
+                jeet(),
+                rupture()
+        ]}))
+        .pipe(autoprefixer())
+        .pipe(csso())
+        .pipe(rename("main.min.css"))
+        .pipe(gulp.dest('assets/css'))
+        .pipe(gulp.dest('_site/assets/css'))
+        .pipe(size())
+        .pipe(reload({stream: true}));
+});
+
 gulp.task('watch', function () {
-    gulp.watch('src/stylus/**/*.styl', ['stylus']);
+    gulp.watch(srcPath.styles, ['styles']);
+    gulp.watch(srcPath.images, ['images']);
     gulp.watch(['index.html', '_layouts/*.html', '_posts/*', '_includes/*', '_drafts/*'], ['jekyll-rebuild']);
 });
 
-/**
- * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync & watch files.
- */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['styles', 'images', 'jekyll-build', 'browser-sync', 'watch']);
