@@ -1,15 +1,29 @@
-.border
+//border-width in 'base-variables.styl'
+
+.border-top, .border-bottom, .border-left, .border-right 
+    display none 
     +above(beta)
-        border-left solid border-width border-color
-        border-right solid border-width border-color
-        &:after, &:before
-            content ""
-            position fixed
-            left 0
-            bottom 0
-            height border-width
-            background border-color
-            width 100%
-        &:before
-            top 0
-            transform: translate(0,0);
+        display block
+    background border-color
+    position fixed
+    z-index 999
+   
+.border-left, .border-right 
+    height 100%
+    width border-width
+   
+.border-left  
+    left 0
+.border-right  
+    right 0
+        
+.border-top, .border-bottom 
+    left 0 
+    right 0
+    height border-width
+    width 100%
+   
+.border-top  
+    top 0
+.border-bottom  
+    bottom 0

@@ -2,15 +2,34 @@ html
     font-size 62.5%
 
 body
-    font-size 1.6rem
-    line-height 2rem 
+    font-size base-font
+    line-height base-line-height
     font-family 'open-sans', sans-serif
-    padding border-width
-    +above(beta)
-        padding (border-width * 2) (border-width * 4)
-        min-height 100%
-        min-height 100vh
 
 img
     max-width 100%
     height auto
+
+p, ul, ol
+    margin-bottom paragraph-space
+
+
+//layout - structure is body > .wrapper > .header + main + .footer
+
+.wrapper
+    padding border-width
+    min-height 100%
+    min-height 100vh
+    display flex
+    flex-direction column
+    +above(beta)
+        padding border-width * 2
+
+main
+    flex 1
+    +above(beta)
+        width 60rem
+        margin 0 auto
+
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, nulla font-emphasize 

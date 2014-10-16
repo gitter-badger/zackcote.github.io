@@ -1,12 +1,17 @@
 ---
-layout: default
+title: Zack Cote
+layout: base
 ---
+
 <ul class="post-list">
-    <h3>Latest Posts</h3>
     {% for post in site.posts %}
     <li class="post-list__post">
+        <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3> 
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <!-- <img src="{{ post.image }}" alt=""> -->
+        <article>
+            {{ post.content }}
+        </article>
     </li>
     {% endfor %}
 </ul>

@@ -1,14 +1,16 @@
 
 //header
 
-.title
-    a
-        {plainLink}
+header a
+    {plainLink}
+    {z-transition}
+    &:hover
+      color z-red  
 
 .header
     padding-bottom section-space
     margin-bottom section-space
-    border-bottom 1rem solid black
+    border-bottom 1rem solid z-black
 
 //footer
 
@@ -21,11 +23,9 @@
 
 .post-list__post
     margin-bottom 1rem
-    
+
 .post-date
-    background-color border-color
-    color white
-    text-transform uppercase
-    font-size 1rem
-    display inline-block
-    float right
+    font-size small-font
+
+
+ 
