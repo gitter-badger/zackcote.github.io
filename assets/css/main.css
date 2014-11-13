@@ -163,7 +163,7 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 2.488888888rem;
-  font-family: 'open-sans', sans-serif;
+  font-family: 'leitura-news', sans-serif;
 }
 img {
   max-width: 100%;
@@ -186,7 +186,7 @@ main {
   }
 }
 .wrapper {
-  padding: 2rem 2rem 0 2rem;
+  padding: border-width border-width 0 border-width;
   min-height: 100%;
   min-height: 100vh;
   display: -webkit-flex;
@@ -198,14 +198,17 @@ main {
 }
 @media only screen and (min-width: 600px) {
   .wrapper {
-    padding: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     padding-bottom: 1rem;
+    padding-top: 8rem;
   }
 }
 .header {
   padding-bottom: 3rem;
   margin-bottom: 3rem;
   border-bottom: 1rem solid #262626;
+  font-family: 'open-sans', arial;
 }
 .header a {
   text-style: none;
@@ -227,8 +230,23 @@ main {
   list-style: none;
 }
 .post-list__post {
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #fa8072;
+  margin-bottom: 4rem;
 }
 .post-date {
   font-size: 1.28rem;
+}
+.post-link {
+  color: #262626;
+  text-decoration: none;
+}
+.post-link:hover {
+  color: #fa8072;
+  -webkit-transition: all 0.1s ease-in;
+          transition: all 0.1s ease-in;
+}
+.post-title {
+  font-size: 3rem;
 }
