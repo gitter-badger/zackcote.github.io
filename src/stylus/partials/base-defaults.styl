@@ -3,7 +3,7 @@ html
 
 body
     font-size base-font
-    line-height base-line-height
+    line-height base-lh
     font-family 'open-sans', sans-serif
 
 img
@@ -13,37 +13,8 @@ img
 p, ul, ol
     margin-bottom paragraph-space
 
-
-//layout - structure is body > .wrapper > .header + main + .footer
-
-.wrapper
-    padding border-width
-    min-height 100%
-    min-height 100vh
-    display flex
-    flex-direction column
-    +above(beta)
-        padding border-width * 2
-
-.header
-    padding-bottom section-space
-    margin-bottom section-space
-    border-bottom 1rem solid z-black
-
-.header a
-    {plainLink}
-    {z-transition}
-    &:hover
-      color z-red  
-
 main
     flex 1
-    +above(beta)
+    +above(alpha)
         width 60rem
         margin 0 auto
-
-
-.footer
-    margin-top section-space
-
-

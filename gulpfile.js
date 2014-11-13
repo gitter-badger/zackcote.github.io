@@ -68,8 +68,10 @@ gulp.task('styles', ['asset-clean'], function () {
             use: [
                 jeet(),
                 rupture()
-        ]}))
+            ]
+        }))
         .pipe(autoprefixer())
+        .pipe(gulp.dest('assets/css'))
         .pipe(csso())
         .pipe(rename("main.min.css"))
         .pipe(gulp.dest('assets/css'))
