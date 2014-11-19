@@ -2,13 +2,14 @@
 title: Zack Cote
 layout: base
 ---
-
+{% include hero.html %}
 <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in site.posts limit:3 %}
     <li class="post-list__post">
-        <h3 class="post-title"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3> 
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h3 class="post-list__title"><a class="post-list__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3> 
+        <span class="post-list__date">{{ post.date | date: "%b %-d, %Y" }}</span>
         <!-- <img src="{{ post.image }}" alt=""> -->
     </li>
     {% endfor %}
+    <a href="" class="post-list__archive">View More Posts in the Archive</a>
 </ul>

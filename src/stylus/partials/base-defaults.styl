@@ -2,19 +2,25 @@ html
     font-size 62.5%
 
 body
-    font-size base-font
+    font-size font-base
     line-height base-lh
     font-family 'leitura-news', sans-serif
+    background z-secondary
+    color z-primary
 
 img
     max-width 100%
     height auto
 
-p, ul, ol
+p, ul, ol, img
     margin-bottom paragraph-space
 
 main
     flex 1
-    +above(alpha)
-        width 60rem
-        margin 0 auto
+    
+h1, h2, h3
+    font-size font-medium
+    line-height lh-medium
+    +above(beta)
+        font-size font-large
+        line-height lh-large

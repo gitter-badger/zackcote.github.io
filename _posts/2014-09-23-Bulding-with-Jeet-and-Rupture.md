@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Hello World!"
+title:  "Building With Jeet & Rupture"
 date:   2014-09-23 10:22:03
 categories: test
 image:

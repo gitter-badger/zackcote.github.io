@@ -164,6 +164,8 @@ body {
   font-size: 1.6rem;
   line-height: 2.488888888rem;
   font-family: 'leitura-news', sans-serif;
+  background: #fff;
+  color: #504b68;
 }
 img {
   max-width: 100%;
@@ -171,7 +173,8 @@ img {
 }
 p,
 ul,
-ol {
+ol,
+img {
   margin-bottom: 1.5rem;
 }
 main {
@@ -179,14 +182,22 @@ main {
       -ms-flex: 1;
           flex: 1;
 }
-@media only screen and (min-width: 600px) {
-  main {
-    width: 60rem;
-    margin: 0 auto;
+h1,
+h2,
+h3 {
+  font-size: 2.2rem;
+  line-height: 2.5rem;
+}
+@media only screen and (min-width: 900px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 3rem;
+    line-height: 3.3rem;
   }
 }
 .wrapper {
-  padding: border-width border-width 0 border-width;
+  padding: 2rem 2rem 0 2rem;
   min-height: 100%;
   min-height: 100vh;
   display: -webkit-flex;
@@ -201,13 +212,13 @@ main {
     padding-left: 4rem;
     padding-right: 4rem;
     padding-bottom: 1rem;
-    padding-top: 8rem;
+    padding-top: 4rem;
   }
 }
 .header {
   padding-bottom: 3rem;
   margin-bottom: 3rem;
-  border-bottom: 1rem solid #262626;
+  border-bottom: 1rem solid #3e372d;
   font-family: 'open-sans', arial;
 }
 .header a {
@@ -221,10 +232,378 @@ main {
   color: inherit;
 }
 .header a:hover {
-  color: #fa8072;
+  color: #3e372d;
+}
+.page__title {
+  font-size: 1.6rem;
+  line-height: lh-base;
 }
 .footer {
   margin-top: 3rem;
+  font-size: 1.28rem;
+  text-align: center;
+}
+.post-list {
+  list-style: none;
+}
+@media only screen and (min-width: 600px) {
+  .post-list {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 31.3333333333333%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .post-list:before,
+  .post-list:after {
+    content: '';
+    display: table;
+  }
+  .post-list:after {
+    clear: both;
+  }
+  .post-list:last-child {
+    margin-right: 0%;
+  }
+}
+.post-list__post {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #3e372d;
+  margin-bottom: 4rem;
+}
+.post-list__date {
+  font-size: 1.28rem;
+}
+.post-list__link {
+  color: #504b68;
+  text-decoration: none;
+}
+.post-list__link:hover {
+  color: #3e372d;
+  -webkit-transition: all 0.1s ease-in;
+          transition: all 0.1s ease-in;
+}
+.post-list__title {
+  color: #504b68;
+  text-decoration: none;
+}
+.post-list__title:hover {
+  color: #fa8072;
+  -webkit-transition: all 0.1s ease-in;
+          transition: all 0.1s ease-in;
+}
+.post-list__archive {
+  float: right;
+  font-size: 1.28rem;
+  text-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+.post-list__archive:visited {
+  color: inherit;
+}
+@media only screen and (min-width: 600px) {
+  .hero {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 65.6666666666667%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .hero:before,
+  .hero:after {
+    content: '';
+    display: table;
+  }
+  .hero:after {
+    clear: both;
+  }
+  .hero:last-child {
+    margin-right: 0%;
+  }
+}
+.placeholder {
+  width: 100%;
+  height: 20rem;
+  background-color: #ccc;
+}
+.placeholder +above alpha {
+  height: 40rem;
+}
+.highlight {
+  padding: 2rem;
+  line-height: 2rem;
+  background: #272822;
+  color: #f9f8f5;
+}
+.nt:nth-child(2n) {
+  color: #fff;
+}
+.nt {
+  color: #fa8072;
+}
+.hll {
+  backgound-color: #49483e;
+}
+.c {
+  color: #75715e;
+/* Comment */
+}
+.err {
+  color: #f92672;
+/* Error */
+}
+.k {
+  color: #ae81ff;
+/* Keyword */
+}
+.l {
+  color: #fd971f;
+/* Literal */
+}
+.n {
+  color: #f9f8f5;
+/* Name */
+}
+.o {
+  color: #a1efe4;
+/* Operator */
+}
+.p {
+  color: #f9f8f5;
+/* Punctuation */
+}
+.cm {
+  color: #75715e;
+/* Comment.Multiline */
+}
+.cp {
+  color: #75715e;
+/* Comment.Preproc */
+}
+.c1 {
+  color: #75715e;
+/* Comment.Single */
+}
+.cs {
+  color: #75715e;
+/* Comment.Special */
+}
+.gd {
+  color: #f92672;
+/* Generic.Deleted */
+}
+.ge {
+  font-style: italic;
+/* Generic.Emph */
+}
+.gh {
+  color: #f9f8f5;
+  font-weight: bold;
+/* Generic.Heading */
+}
+.gi {
+  color: #a6e22e;
+/* Generic.Inserted */
+}
+.gp {
+  color: #75715e;
+  font-weight: bold;
+/* Generic.Prompt */
+}
+.gs {
+  font-weight: bold;
+/* Generic.Strong */
+}
+.gu {
+  color: #a1efe4;
+  font-weight: bold;
+/* Generic.Subheading */
+}
+.kc {
+  color: #ae81ff;
+/* Keyword.Constant */
+}
+.kd {
+  color: #ae81ff;
+/* Keyword.Declaration */
+}
+.kn {
+  color: #a1efe4;
+/* Keyword.Namespace */
+}
+.kp {
+  color: #ae81ff;
+/* Keyword.Pseudo */
+}
+.kr {
+  color: #ae81ff;
+/* Keyword.Reserved */
+}
+.kt {
+  color: #f4bf75;
+/* Keyword.Type */
+}
+.ld {
+  color: #a6e22e;
+/* Literal.Date */
+}
+.m {
+  color: #fd971f;
+/* Literal.Number */
+}
+.s {
+  color: #a6e22e;
+/* Literal.String */
+}
+.na {
+  color: #66d9ef;
+/* Name.Attribute */
+}
+.nb {
+  color: #f9f8f5;
+/* Name.Builtin */
+}
+.nc {
+  color: #f4bf75;
+/* Name.Class */
+}
+.no {
+  color: #f92672;
+/* Name.Constant */
+}
+.nd {
+  color: #a1efe4;
+/* Name.Decorator */
+}
+.ni {
+  color: #f9f8f5;
+/* Name.Entity */
+}
+.ne {
+  color: #f92672;
+/* Name.Exception */
+}
+.nf {
+  color: #66d9ef;
+/* Name.Function */
+}
+.nl {
+  color: #f9f8f5;
+/* Name.Label */
+}
+.nn {
+  color: #f4bf75;
+/* Name.Namespace */
+}
+.nx {
+  color: #66d9ef;
+/* Name.Other */
+}
+.py {
+  color: #f9f8f5;
+/* Name.Property */
+}
+.nt {
+  color: #fa8072;
+/* Name.Tag */
+}
+.nv {
+  color: #f92672;
+/* Name.Variable */
+}
+.ow {
+  color: #a1efe4;
+/* Operator.Word */
+}
+.w {
+  color: #f9f8f5;
+/* Text.Whitespace */
+}
+.mf {
+  color: #fd971f;
+/* Literal.Number.Float */
+}
+.mh {
+  color: #fd971f;
+/* Literal.Number.Hex */
+}
+.mi {
+  color: #fd971f;
+/* Literal.Number.Integer */
+}
+.mo {
+  color: #fd971f;
+/* Literal.Number.Oct */
+}
+.sb {
+  color: #a6e22e;
+/* Literal.String.Backtick */
+}
+.sc {
+  color: #f9f8f5;
+/* Literal.String.Char */
+}
+.sd {
+  color: #75715e;
+/* Literal.String.Doc */
+}
+.s2 {
+  color: #a6e22e;
+/* Literal.String.Double */
+}
+.se {
+  color: #fd971f;
+/* Literal.String.Escape */
+}
+.sh {
+  color: #a6e22e;
+/* Literal.String.Heredoc */
+}
+.si {
+  color: #fd971f;
+/* Literal.String.Interpol */
+}
+.sx {
+  color: #a6e22e;
+/* Literal.String.Other */
+}
+.sr {
+  color: #a6e22e;
+/* Literal.String.Regex */
+}
+.s1 {
+  color: #a6e22e;
+/* Literal.String.Single */
+}
+.ss {
+  color: #a6e22e;
+/* Literal.String.Symbol */
+}
+.bp {
+  color: #f9f8f5;
+/* Name.Builtin.Pseudo */
+}
+.vc {
+  color: #f92672;
+/* Name.Variable.Class */
+}
+.vg {
+  color: #f92672;
+/* Name.Variable.Global */
+}
+.vi {
+  color: #f92672;
+/* Name.Variable.Instance */
+}
+.il {
+  color: #fd971f;
+/* Literal.Number.Integer.Long */
 }
 .post-list {
   list-style: none;
@@ -232,21 +611,9 @@ main {
 .post-list__post {
   margin-top: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 2px solid #fa8072;
+  border-bottom: 2px solid #3e372d;
   margin-bottom: 4rem;
 }
 .post-date {
   font-size: 1.28rem;
-}
-.post-link {
-  color: #262626;
-  text-decoration: none;
-}
-.post-link:hover {
-  color: #fa8072;
-  -webkit-transition: all 0.1s ease-in;
-          transition: all 0.1s ease-in;
-}
-.post-title {
-  font-size: 3rem;
 }

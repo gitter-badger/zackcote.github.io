@@ -1,18 +1,21 @@
 //Vendor
-@import 'jeet';                     //best grid system ever
-@import 'rupture';                  //brilliant breakpoints
+@import 'jeet';                         //best grid system ever
+@import 'rupture';                      //brilliant breakpoints
 
 //Base
-@import 'partials/base-reset';      //basic css reset
-@import 'partials/base-variables';  //non-rendering dependencies
-@import 'partials/base-helpers';    //non-rendering global helpers
-@import 'partials/base-defaults';   //may require helpers & variables
+@import 'partials/base-reset';          //basic css reset
+@import 'partials/base-variables';      //non-rendering dependencies
+@import 'partials/base-helpers';        //non-rendering global helpers & mixins
+@import 'partials/base-defaults';       //type selector general styles
 
-//Sections
+//Sectioning
 @import 'partials/wrapper';
-@import 'partials/header';           //site-wide header
-@import 'partials/footer';
 
 //Modules
+@import 'partials/header';              //site-wide header
+@import 'partials/footer';
+@import 'partials/post-list';
+@import 'partials/hero';
+@import 'partials/code-highlighting';
 //Shame
-@import 'partials/shame';           //unsorted, ugly, hacky stuff
+@import 'partials/shame';               //unsorted, ugly, hacky stuff
