@@ -83,7 +83,7 @@ gulp.task('styles', ['asset-clean'], function () {
 gulp.task('watch', function () {
     gulp.watch(srcPath.styles, ['styles']);
     gulp.watch(srcPath.images, ['images']);
-    gulp.watch(['index.html', '_layouts/*.html', '_posts/*', '_includes/*', '_drafts/*'], ['jekyll-rebuild']);
+    gulp.watch(['*.html', '*.md', '_layouts/*.html', '_posts/*', '_includes/*', '_drafts/*'], ['jekyll-rebuild']);
 });
 
 gulp.task('default', ['styles', 'images', 'jekyll-build', 'browser-sync', 'watch']);
