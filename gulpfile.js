@@ -14,6 +14,8 @@ var del          = require('del');
 var size         = require('gulp-filesize');
 var imagemin     = require('gulp-imagemin');
 var pngcrush     = require('imagemin-pngcrush');
+var concat       = require('gulp-concat');
+var uglify       = require('gulp-uglify');
 var srcPath = {
     styles: 'src/stylus/**/*.styl',
     images: 'src/images/*'
@@ -33,6 +35,10 @@ gulp.task('jekyll-build', function (done) {
 });
 
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+    browserSync.reload();
+});
+
+gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
@@ -80,9 +86,17 @@ gulp.task('styles', ['asset-clean'], function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('js', function () {
+    return gulp.src('src/js/main.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('assets/js/'))
+        .pipe(gulp.dest('_site/assets/js/'));
+});
+
 gulp.task('watch', function () {
     gulp.watch(srcPath.styles, ['styles']);
     gulp.watch(srcPath.images, ['images']);
+    gulp.watch('src/js/main.js', ['js', 'bs-reload']);
     gulp.watch(['*.html', '*.md', '_layouts/*.html', '_posts/*', '_includes/*', '_drafts/*'], ['jekyll-rebuild']);
 });
 

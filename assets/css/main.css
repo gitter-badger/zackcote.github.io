@@ -148,14 +148,12 @@ select {
   vertical-align: middle;
 }
 html {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
 }
 *,
 *:before,
 *:after {
-  -moz-box-sizing: inherit;
-       box-sizing: inherit;
+  box-sizing: inherit;
 }
 html {
   font-size: 62.5%;
@@ -163,7 +161,7 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 2.488888888rem;
-  font-family: 'leitura-news', sans-serif;
+  font-family: 'Sweden Sans', sans-serif;
   background: #fff;
   color: #504b68;
 }
@@ -181,6 +179,7 @@ ul {
   list-style-position: inside;
 }
 main {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -203,9 +202,12 @@ h3 {
   padding: 2rem 2rem 0 2rem;
   min-height: 100%;
   min-height: 100vh;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
@@ -222,7 +224,6 @@ h3 {
   padding-bottom: 3rem;
   margin-bottom: 3rem;
   border-bottom: 1rem solid #3e372d;
-  font-family: 'open-sans', arial;
 }
 .header a {
   text-style: none;
