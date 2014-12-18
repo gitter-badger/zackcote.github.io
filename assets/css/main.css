@@ -198,6 +198,15 @@ h3 {
     line-height: 3.3rem;
   }
 }
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: all 0.1s ease-in;
+          transition: all 0.1s ease-in;
+}
+a:hover {
+  color: #fa8072;
+}
 .wrapper {
   padding: 2rem 2rem 0 2rem;
   min-height: 100%;
@@ -224,23 +233,6 @@ h3 {
   padding-bottom: 3rem;
   margin-bottom: 3rem;
   border-bottom: 1rem solid #3e372d;
-}
-.header a {
-  text-style: none;
-  text-decoration: none;
-  color: inherit;
-  -webkit-transition: all 0.1s ease-in;
-          transition: all 0.1s ease-in;
-}
-.header a:visited {
-  color: inherit;
-}
-.header a:hover {
-  color: #3e372d;
-}
-.page__title {
-  font-size: 1.6rem;
-  line-height: lh-base;
 }
 .footer {
   margin-top: 3rem;

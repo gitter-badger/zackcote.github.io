@@ -44,9 +44,9 @@ gulp.task('bs-reload', function () {
 gulp.task('browser-sync', function () {
     browserSync({
         server: {
-            baseDir: "_site/"
+            baseDir: "_site"
         },
-        open: "external",
+        open: true,
     });
 });
 
