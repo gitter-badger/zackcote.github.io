@@ -27,7 +27,6 @@ var messages = {
     jekyllBuild: 'Running: $ jekyll build'
 };
 
-
 //change cp.exec to cp.spawn if on windows
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
@@ -58,39 +57,41 @@ gulp.task('asset-clean', function(cb) {
 
 gulp.task('images', function () {
     return gulp.src(srcPath.images)
-        .pipe(imagemin({
-            optimizationLevel: 7,
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngcrush()]
-        }))
-        .pipe(gulp.dest(destPath.images));
+    .pipe(plumber())
+    .pipe(imagemin({
+        optimizationLevel: 7,
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [pngcrush()]
+    }))
+    .pipe(gulp.dest(destPath.images));
 });
 
 gulp.task('styles', ['asset-clean'], function () {
-    gulp.src('src/stylus/main.styl')
-        .pipe(plumber())
-        .pipe(stylus({
-            use: [
-                jeet(),
-                rupture()
-            ]
-        }))
-        .pipe(autoprefixer())
-        .pipe(gulp.dest('assets/css'))
-        .pipe(csso())
-        .pipe(rename("main.min.css"))
-        .pipe(gulp.dest('assets/css'))
-        .pipe(gulp.dest('_site/assets/css'))
-        .pipe(size())
-        .pipe(reload({stream: true}));
+    return gulp.src('src/stylus/main.styl')
+    .pipe(plumber())
+    .pipe(stylus({
+        use: [
+        jeet(),
+        rupture()
+        ]
+    }))
+    .pipe(autoprefixer())
+    .pipe(gulp.dest('assets/css'))
+    .pipe(csso())
+    .pipe(rename("main.min.css"))
+    .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest('_site/assets/css'))
+    .pipe(size())
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('js', function () {
     return gulp.src('src/js/main.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('assets/js/'))
-        .pipe(gulp.dest('_site/assets/js/'));
+    .pipe(plumber())
+    .pipe(uglify())
+    .pipe(gulp.dest('assets/js/'))
+    .pipe(gulp.dest('_site/assets/js/'));
 });
 
 gulp.task('watch', function () {

@@ -611,3 +611,12 @@ h3 {
   color: #fd971f;
 /* Literal.Number.Integer.Long */
 }
+.woah-div {
+  text-align: center;
+  padding: 2rem;
+  background: #b3b3b3;
+  margin-bottom: 1rem;
+}
+.woah-div:nth-of-type(2n + 1) {
+  background: #808080;
+}

@@ -1,2 +1,4 @@
-"use strict";
-console.log("Dude!");
+//Document Ready Function
+$( document ).ready(function() {
+
+});
