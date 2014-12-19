@@ -1,11 +1,11 @@
 ---
 title: Archive
-layout: base
+layout: page
 ---
 <ul class="post-list">
     {% for post in site.posts %}
     <li class="post-list__post">
-        <h2 class="post-list__title"><a class="post-list__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2> 
+        <h2 class="post-list__title"><a class="post-list__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
         <span class="post-list__date">{{ post.date | date: "%b %-d, %Y" }}</span>
         <!-- <img src="{{ post.image }}" alt=""> -->
     </li>

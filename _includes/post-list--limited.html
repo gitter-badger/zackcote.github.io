@@ -1,0 +1,10 @@
+<ul class="post-list">
+    {% for post in site.posts limit:3 %}
+    <li class="post post-list__post">
+        <h2 class="post__title"><a class="post__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+        <span class="post__date">{{ post.date | date: "%-d %b %Y" }}</span>
+        <!-- <img src="{{ post.image }}" alt=""> -->
+    </li>
+    {% endfor %}
+    <a href="/archive" class="post-list__archive">View More Posts in the Archive</a>
+</ul>

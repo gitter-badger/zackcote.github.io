@@ -46,7 +46,7 @@ gulp.task('browser-sync', function () {
         server: {
             baseDir: "_site"
         },
-        open: true,
+        open: 'external',
     });
 });
 

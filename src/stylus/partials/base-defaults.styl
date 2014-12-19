@@ -3,9 +3,9 @@ html
 
 body
     {font-base}
-    font-family 'Sweden Sans', sans-serif
-    background z-secondary
-    color z-primary
+    font-family 'Sweden_Sans', sans-serif
+    background color-background
+    color color-primary
 
 img
     max-width 100%
@@ -26,8 +26,21 @@ h1, h2, h3, h4, h5, h6
         {font-large}
 
 a
+    {z-transition}
     text-decoration none
     color inherit
-    {z-transition}
     &:hover
-        color salmon
+        color color-accent
+
+p a
+    color color-accent
+    font-weight bold
+    &:hover
+        text-decoration underline
+
+.content
+    +above(alpha)
+        col(2/3)
+.sidebar
+    +above(alpha)
+        col(1/3)

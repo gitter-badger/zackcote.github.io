@@ -1,4 +1,25 @@
 .header
-    padding-bottom section-space
     margin-bottom section-space
-    border-bottom 1rem solid z-accent
+    border-bottom 1rem solid color-secondary
+    z-index 5000
+
+.page-title
+    text-align center
+    {font-base}
+    +above(beta)
+        {font-large}
+
+.page-nav
+    text-align center
+    margin 2rem
+    {plainList}
+    li a
+        padding 1rem 2rem
+        &:hover
+            background color-accent
+            color white
+    +above(alpha)
+        li
+            padding 1rem
+        li a
+            padding 1rem 2rem
