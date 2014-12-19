@@ -2,8 +2,7 @@ html
     font-size 62.5%
 
 body
-    font-size font-base
-    line-height base-lh
+    {font-base}
     font-family 'Sweden Sans', sans-serif
     background z-secondary
     color z-primary
@@ -21,12 +20,10 @@ ul
 main
     flex 1
 
-h1, h2, h3
-    font-size font-medium
-    line-height lh-medium
+h1, h2, h3, h4, h5, h6
+    {font-medium}
     +above(beta)
-        font-size font-large
-        line-height lh-large
+        {font-large}
 
 a
     text-decoration none

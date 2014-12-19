@@ -1,0 +1,30 @@
+//Styles for animating "main" content entrance.
+
+/*
+ * Keyframes
+ */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.main .scene_element {
+  animation-duration: 0.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+.main .scene_element--fadein {
+  animation-name: fadeInDown;
+}
+
+.main.is-exiting .scene_element {
+  animation-direction: alternate-reverse;
+}

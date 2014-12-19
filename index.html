@@ -3,9 +3,15 @@ title: Zack Cote
 layout: base
 ---
 
-<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptas.</h1>
-<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, assumenda!</h2>
-<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, assumenda!</h3>
-<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, libero.</h4>
-<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, eum.</h5>
-<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, repellendus?</h6>
+{% include hero.html %}
+
+<ul class="post-list">
+    {% for post in site.posts limit:3 %}
+    <li class="post post-list__post">
+        <h2 class="post__title"><a class="post__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+        <span class="post__date">{{ post.date | date: "%-d %b %Y" }}</span>
+        <!-- <img src="{{ post.image }}" alt=""> -->
+    </li>
+    {% endfor %}
+    <a href="/archive" class="post-list__archive">View More Posts in the Archive</a>
+</ul>

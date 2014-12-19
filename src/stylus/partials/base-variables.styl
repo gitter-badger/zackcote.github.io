@@ -12,12 +12,30 @@ z-accent = darken(primary-shifted, 40%)
 section-space = 3rem
 paragraph-space = 1.5rem
 
-//typography
-font-base = 1.6rem
-font-small = font-base * .8
+//typography variables
+font-base = 1.8rem
+font-small = font-base * .8rem
 font-medium = 2.2rem
 font-large = 3rem
-base-lh = font-base * 1.555555555
+lh-base = font-base * 1.555555555rem
 lh-medium = 2.5rem
 lh-large = 3.3rem
 border-width = 2rem
+
+//type styles
+
+font-base =
+    font-size font-base
+    line-height lh-base
+
+font-small =
+    font-size font-small
+    line-height lh-small
+
+font-medium =
+    font-size font-medium
+    line-height lh-medium
+
+font-large =
+    font-size font-large
+    line-height lh-large

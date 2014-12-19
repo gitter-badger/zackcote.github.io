@@ -159,8 +159,8 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-size: 1.6rem;
-  line-height: 2.488888888rem;
+  font-size: 1.8rem;
+  line-height: 2.799999999rem;
   font-family: 'Sweden Sans', sans-serif;
   background: #fff;
   color: #504b68;
@@ -186,14 +186,20 @@ main {
 }
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   font-size: 2.2rem;
   line-height: 2.5rem;
 }
 @media only screen and (min-width: 900px) {
   h1,
   h2,
-  h3 {
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: 3rem;
     line-height: 3.3rem;
   }
@@ -236,7 +242,7 @@ a:hover {
 }
 .footer {
   margin-top: 3rem;
-  font-size: 1.28rem;
+  font-size: @block;
   text-align: center;
 }
 .post-list {
@@ -273,7 +279,7 @@ a:hover {
   padding-bottom: 2rem;
 }
 .post__date {
-  font-size: 1.28rem;
+  font-size: @block;
 }
 .post__link {
   color: #504b68;
@@ -295,7 +301,7 @@ a:hover {
 }
 .post-list__archive {
   float: right;
-  font-size: 1.28rem;
+  font-size: @block;
   text-style: none;
   text-decoration: none;
   color: inherit;
@@ -602,6 +608,46 @@ a:hover {
 .il {
   color: #fd971f;
 /* Literal.Number.Integer.Long */
+}
+.main .scene_element {
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.main .scene_element--fadein {
+  -webkit-animation-name: fadeInDown;
+          animation-name: fadeInDown;
+}
+.main.is-exiting .scene_element {
+  -webkit-animation-direction: alternate-reverse;
+          animation-direction: alternate-reverse;
+}
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 .woah-div {
   text-align: center;
