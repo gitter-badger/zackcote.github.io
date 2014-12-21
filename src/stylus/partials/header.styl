@@ -1,5 +1,4 @@
 .header
-    margin-bottom section-space
     border-bottom 1rem solid color-secondary
     z-index 5000
 
@@ -8,6 +7,17 @@
     {font-base}
     +above(beta)
         {font-large}
+    &:before
+        content "{ "
+        color color-accent
+        font-weight bold
+    &:after
+        content " }"
+        color color-accent
+        font-weight bold
+    margin-bottom 1.5rem
+    text-align left
+    font-weight 100
 
 .page-nav
     text-align center

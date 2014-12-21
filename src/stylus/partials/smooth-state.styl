@@ -1,33 +1,16 @@
-//Styles for animating content entrances.
-
-@keyframes fadeInUp
-  0%
-    opacity 0
-    transform translate3d(0, 10%, 0)
-
-  100%
-    opacity 1
-    transform none
-
-@keyframes fadeInRight
-  0%
-    opacity 0
-    transform translate3d(10%, 0, 0)
-
-  100%
-    opacity 1
-    transform none
-
-.wrapper .animated
-  animation-duration 250ms
+.ss-wrapper .animated
+  animation-duration 0.25s
   transition-timing-function ease-in
   animation-fill-mode both
 
-.wrapper .animated--fadeInUp
-  animation-name fadeInUp
+.ss-wrapper .animated--fadeIn
+  animation-name fadeIn
 
-.wrapper .animated--fadeInRight
-  animation-name fadeInRight
-
-.wrapper.is-exiting .animated
+.ss-wrapper.is-exiting .animated
   animation-direction alternate-reverse
+
+@keyframes fadeIn
+    0%
+        opacity 0
+    100%
+        opacity 1
