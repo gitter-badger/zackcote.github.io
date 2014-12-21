@@ -4,6 +4,7 @@
     min-height 100vh
     display flex
     flex-direction column
+    // background color-secondary
     +above(alpha)
         padding-left border-width * 2
         padding-right border-width * 2
@@ -13,3 +14,19 @@
         width beta
     +above(gamma)
         width gamma
+
+.content
+    +above(alpha)
+        span(2/3, cycle: 2)
+        background color-background
+.sidebar
+    +above(alpha)
+        span(1/3, cycle: 2)
+        background color-background
+        padding-left 5rem
+
+.behind-index
+    background color-secondary
+    overflow hidden
+    cf()
+

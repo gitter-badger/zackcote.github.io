@@ -1,14 +1,17 @@
 ---
 layout: base
 ---
-<article class="post">
-    <header class="post__header">
-        {% include blog-breadcrumb.html %}
-        <h1 class="post__title">{{ page.title }}</h1>
-        <p class="post__date">{{ page.date | date: "%-d %b %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-    </header>
 
-    <div class="post__content">
-        {{ content }}
+<article class="post box">
+    <div class="box__content animated animated--slideInRight">
+        <header class="post__header">
+            {% include breadcrumb--post.html %}
+            <h1 class="post__title">{{ page.title }}</h1>
+            <p class="post__date">{{ page.date | date: "%-d %b %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+            <div class="box__marker"></div>
+        </header>
+        <div class="post__content">
+            {{ content }}
+        </div>
     </div>
 </article>

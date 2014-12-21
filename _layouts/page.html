@@ -2,11 +2,15 @@
 layout: base
 ---
 
-<header class="post__header">
-    {% include page-breadcrumb.html %}
-    <h1>{{ page.title }}</h1>
-</header>
-
-<article class="post__content">
-  {{ content }}
-</article>
+<div class="box">
+    <div class="box__content animated animated--slideInRight">
+        <header class="post__header">
+            {% include breadcrumb--page.html %}
+            <h1 class="page-title">{{ page.title }}</h1>
+            <div class="box__marker"></div>
+        </header>
+        <article class="post__content">
+          {{ content }}
+      </article>
+  </div>
+</div>

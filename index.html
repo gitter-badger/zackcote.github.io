@@ -2,10 +2,14 @@
 title: Home
 layout: base
 ---
-<section class="content">
+<div class="behind-index">
+<section class="content animated animated--slideInTop">
     {% include hero.html %}
 </section>
 
-<div class="sidebar">
+<div class="sidebar animated animated--slideInRight">
     {% include post-list--limited.html %}
 </div>
+</div>
+
+{% include box.html %}

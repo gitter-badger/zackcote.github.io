@@ -1,8 +1,8 @@
 <ul class="post-list">
     {% for post in site.posts %}
-    <li class="post post-list__post">
-        <h2 class="post__title"><a class="post__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-        <span class="post__date">{{ post.date | date: "%-d %b %Y" }}</span>
+    <li class="post-list__post">
+        <h2 class="post-list__title"><a class="post__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+        <span class="post-list__date">{{ post.date | date: "%-d %b %Y" }}</span>
         <!-- <img src="{{ post.image }}" alt=""> -->
     </li>
     {% endfor %}

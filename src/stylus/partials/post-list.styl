@@ -1,22 +1,26 @@
 
 .post-list
     list-style none
+    margin-bottom 1rem
+    cf()
 
 .post-list__title
     {font-large}
 
+.post-list__date
+    {font-small}
+    color color-primary--light
 
 .post-list__post
     border-bottom 2px solid color-secondary
-    margin-bottom 4rem
+    margin-bottom 2.5rem
     {font-small}
-
-.post__date
-    {font}
-    color color-primary--light
+    &:last-of-type
+        margin-bottom 1rem
 
 
 .post-list__archive
     float right
     {font-small}
     {plainLink}
+

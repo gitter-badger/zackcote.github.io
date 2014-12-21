@@ -6,11 +6,35 @@
 .ss-wrapper .animated--fadeIn
   animation-name fadeIn
 
+.ss-wrapper .animated--slideInRight
+  animation-name slideInRight
+
+.ss-wrapper .animated--slideInTop
+  animation-name slideInTop
+  cf()
+
 .ss-wrapper.is-exiting .animated
   animation-direction alternate-reverse
 
 @keyframes fadeIn
     0%
         opacity 0
+        background none
     100%
         opacity 1
+
+@keyframes slideInRight
+    0%
+        opacity 0
+        transform translate3d(100%, 0, 0);
+    100%
+        opacity 1
+        transform none
+
+@keyframes slideInTop
+    0%
+        opacity 0
+        transform translate3d(0, -100%, 0);
+    100%
+        opacity 1
+        transform none
