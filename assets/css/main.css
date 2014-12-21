@@ -173,7 +173,8 @@ img {
 p,
 ul,
 ol,
-img {
+img,
+.highlight {
   margin-bottom: 1.5rem;
 }
 ul {
@@ -268,6 +269,7 @@ p code {
     margin-left: 0%;
     margin-right: 0%;
     background: #fff;
+    padding-right: 2.5rem;
   }
   .content:before,
   .content:after {
@@ -294,7 +296,7 @@ p code {
     margin-left: 0%;
     margin-right: 0%;
     background: #fff;
-    padding-left: 5rem;
+    padding-left: 2.5rem;
   }
   .sidebar:before,
   .sidebar:after {
@@ -332,7 +334,7 @@ p code {
   text-align: center;
   font-size: 1.8rem;
   line-height: 2.799999999rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: left;
   font-weight: 100;
 }
@@ -688,13 +690,11 @@ p code {
   font-size: 1.44rem;
   line-height: 1.85rem;
 }
-.post-list__post:last-of-type {
-  margin-bottom: 1rem;
-}
 .post-list__archive {
   float: right;
   font-size: 1.44rem;
   line-height: 1.85rem;
+  padding-bottom: 5.6rem;
 }
 .placeholder {
   width: 100%;
@@ -892,9 +892,6 @@ p code {
 .post__date {
   color: #7f789e;
   margin-bottom: 1rem;
-}
-.hero__text {
-  padding-bottom: 5.6rem;
 }
 .page-title {
   margin-bottom: 2rem;

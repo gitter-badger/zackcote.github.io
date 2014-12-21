@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "It's Fucking Cold Right Now"
-date:   2014-11-17 17:11:03
+title:  "Case Study: Eye for Sound"
+date:   2014-12-20 17:11:03
 categories: personal
 ---
 
