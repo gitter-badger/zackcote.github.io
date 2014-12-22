@@ -2,10 +2,13 @@
 layout: post
 title:  "Case Study: Eye for Sound"
 date:   2014-12-20 17:11:03
-categories: personal
+categories:
+    - Case Studies
+    - Development
+    - Design
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur soluta, totam explicabo ut quaerat delectus excepturi itaque voluptatum! Alias nostrum odio quas, culpa, amet fugit fugiat harum beatae suscipit magnam modi quaerat a. Ipsa nobis unde consectetur! Porro qui neque harum, ipsa, necessitatibus nesciunt, blanditiis at commodi ducimus iste in.
+*Lorem* ipsum dolor **sit amet, consectetur** adipisicing elit. Pariatur soluta, totam explicabo ut quaerat delectus excepturi itaque voluptatum! Alias nostrum odio quas, culpa, amet fugit fugiat harum beatae suscipit magnam modi quaerat a. Ipsa nobis unde consectetur! Porro qui neque harum, ipsa, necessitatibus nesciunt, blanditiis at commodi ducimus iste in.
 
 {% highlight css %}
 

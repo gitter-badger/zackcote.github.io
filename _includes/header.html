@@ -1,5 +1,10 @@
-<header class="header">
-    <h1 class="site-title"><a href="/">zack cote</a></h1>
+{% if page.title == 'Home' %}
+    <header class="header header--brown">
+{% else %}
+    <header class="header">
+{% endif %}
+        <h1 class="site-title"><a href="/">zack cote</a></h1>
+        <span>Front End Developer & Designer in Providence, RI.</span>
  <!--    <nav>
         <ul class="site-nav">
             <li><a href="/work">Work</a></li>
@@ -8,3 +13,4 @@
         </ul>
     </nav> -->
 </header>
+

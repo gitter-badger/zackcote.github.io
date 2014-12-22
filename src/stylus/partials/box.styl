@@ -1,4 +1,6 @@
 .box
+    +below(alpha)
+        margin-top 2rem
     col(1/1)
     clear both
     background color-secondary
@@ -14,8 +16,17 @@
     margin-bottom 2.5rem
 
 .box__content
-    col(2/3)
-    float right
-    margin 10rem 0 0 0
-    padding 5rem
+    padding 2rem 2rem 2rem 3rem
+    margin-top 4rem
     background color-background
+    width 90%
+    float right
+    +above(alpha)
+        margin 10rem 0 0 0
+        col(2/3)
+        padding 5rem
+        float right
+
+
+
+

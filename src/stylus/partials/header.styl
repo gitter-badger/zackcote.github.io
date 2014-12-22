@@ -1,12 +1,19 @@
 .header
-    border-bottom 1rem solid color-secondary
+    +below(alpha)
+        margin 2rem 2rem 0 2rem
+    border-bottom 1rem solid color-accent
     margin-bottom 3rem
 
+.header--brown
+    border-color color-secondary
+
 .site-title
-    text-align center
-    {font-base}
-    +above(beta)
-        {font-large}
+    +below(alpha)
+         margin 0 2rem 2rem 0
+    float left
+    font-weight 100
+    {font-large}
+    margin-bottom 2rem
     &:before
         content "{ "
         color color-accent
@@ -15,9 +22,14 @@
         content " }"
         color color-accent
         font-weight bold
-    margin-bottom 2rem
-    text-align left
-    font-weight 100
+
+.header span
+    display none
+    color color-primary--light
+    +above(beta)
+        display inline
+        float left
+        margin-left 2rem
 
 .site-nav
     text-align center
@@ -33,3 +45,4 @@
             padding 1rem
         li a
             padding 1rem 2rem
+
