@@ -255,7 +255,8 @@ p code {
 }
 @media only screen and (min-width: 1200px) {
   .wrapper {
-    width: 1200px;
+    width: 95%;
+    max-width: 200rem;
   }
 }
 .content {
@@ -729,13 +730,20 @@ p code {
 .placeholder {
   width: 100%;
   height: 27rem;
-  background: url("/assets/img/frankie.jpg");
-  background-size: cover;
+  background: url("/assets/img/zack-desk.jpg");
+  background-size: contain;
+  background-position: right;
   margin-bottom: 1rem;
 }
 @media only screen and (min-width: 600px) {
   .placeholder {
     height: 30rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .placeholder {
+    background-size: cover;
+    height: 40rem;
   }
 }
 .ss-wrapper .animated {
@@ -938,12 +946,29 @@ p code {
     margin-right: 0%;
   }
 }
+@media only screen and (min-width: 1200px) {
+  .box__content {
+    max-width: 100rem;
+  }
+}
 .post__date {
   color: #787099;
   margin-bottom: 1rem;
 }
 .page-title {
   margin-bottom: 2rem;
+}
+::-moz-selection {
+  background: #ad4444;
+  color: #fff;
+}
+::selection {
+  background: #ad4444;
+  color: #fff;
+}
+::-moz-selection {
+  background: #ad4444;
+  color: #fff;
 }
 .inner-wrap {
   background: #fff;
