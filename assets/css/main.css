@@ -156,6 +156,12 @@ html {
 *:after {
   box-sizing: inherit;
 }
+.accent-line {
+  height: 1rem;
+  width: 14rem;
+  background: #ad4444;
+  margin-bottom: 2.5rem;
+}
 html {
   font-size: 62.5%;
 }
@@ -262,7 +268,7 @@ p code {
 .content {
   background: #fff;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
   .content {
     *zoom: 1;
     float: left;
@@ -291,7 +297,7 @@ p code {
 .sidebar {
   background: #fff;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
   .sidebar {
     *zoom: 1;
     float: left;
@@ -727,6 +733,9 @@ p code {
   line-height: 1.85rem;
   padding-bottom: 5.6rem;
 }
+.post-list__heading {
+  margin-bottom: 1rem;
+}
 .placeholder {
   width: 100%;
   height: 27rem;
@@ -908,7 +917,7 @@ p code {
 .box__title {
   margin-bottom: 1rem;
 }
-.box__marker {
+.accent-line {
   height: 1rem;
   width: 14rem;
   background: #ad4444;

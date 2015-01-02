@@ -8,7 +8,7 @@ layout: base
             {% include breadcrumb--post.html %}
             <h1 class="post__title">{{ page.title }}</h1>
             <p class="post__date">{{ page.date | date: "%-d %b %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-            <div class="box__marker"></div>
+            <div class="accent-line"></div>
         </header>
         <div class="post__content">
             {{ content }}
