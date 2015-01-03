@@ -1,0 +1,39 @@
+.newsletter-box
+    cf()
+    position relative
+    clear both
+    height 30rem
+    color white
+    padding space
+    margin space 0
+    background-color color-accent
+    background linear-gradient(to right, rgba(173, 68, 68, 0) 0%, rgba(173, 68, 68, 1) 70%, rgba(173, 68, 68,1) 100%), url('/assets/img/zack-flower2.jpg') no-repeat
+    background-size 100% 100%, auto 100%
+    background-position left top
+    text-align right
+    p
+        {font-medium}
+    +above(beta)
+        height 25rem
+        text-align right
+        background linear-gradient(to right, rgba(173, 68, 68, 0) 0%, rgba(173, 68, 68, 1) 35%, rgba(173, 68, 68,1) 100%), url('/assets/img/zack-flower2.jpg') no-repeat
+        background-size 100% 100%, auto 100%
+        background-position left top
+
+.newsletter-box form
+    text-align right
+    width 75%
+    p
+        {font-base}
+        line-height space
+        +above(beta)
+            {font-medium}
+    position absolute
+    right space
+    bottom space
+    +above(gamma)
+        width 50%
+
+.email
+    padding 1rem
+    border none

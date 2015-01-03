@@ -98,7 +98,7 @@ gulp.task('watch', function () {
     gulp.watch(srcPath.styles, ['styles']);
     gulp.watch(srcPath.images, ['images']);
     gulp.watch('src/js/main.js', ['js', 'bs-reload']);
-    gulp.watch(['*.html', '*.md', '_layouts/*.html', '_posts/*', '_includes/*', '_drafts/*'], ['jekyll-rebuild']);
+    gulp.watch(['*.html', '*.md', '_layouts/*.html', '_posts/*', '_includes/*', '_drafts/*', 'assets/img/*.*'], ['jekyll-rebuild']);
 });
 
 gulp.task('default', ['styles', 'images', 'jekyll-build', 'browser-sync', 'watch']);

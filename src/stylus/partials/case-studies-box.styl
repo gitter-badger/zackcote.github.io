@@ -1,11 +1,11 @@
 .case-studies-title
     position absolute
-    top 2rem
-    left 2rem
+    top space
+    left space
     z-index 200
 
 .case-studies-box
-    margin 2rem 0
+    margin space 0
     height 40rem
     position relative
     background color-primary
@@ -48,20 +48,22 @@
         background alpha(color-baywood, .5)
 
 .case-content
-    +below(alpha)
+    +below(beta)
         opacity 1
     background none
     color white
     position absolute
     bottom 0
-    left 2rem
+    left space
     opacity 0
     z-index 1000
+    h3
+        margin-bottom 1rem
     {z-transition}
     {font-small}
     +above(beta)
         {font-medium}
 
 .active > .case-content
-    bottom 2rem
+    bottom space
     opacity 1
