@@ -212,6 +212,9 @@ h6 {
     line-height: 4rem;
   }
 }
+h2 {
+  margin-bottom: 1rem;
+}
 a {
   -webkit-transition: all 0.15s ease-in;
           transition: all 0.15s ease-in;
@@ -410,7 +413,7 @@ p code {
   }
 }
 .footer {
-  margin-top: 3rem;
+  margin-top: 1rem;
   background-color: #fff;
   text-align: center;
 }
@@ -731,10 +734,6 @@ p code {
   float: right;
   font-size: 1.44rem;
   line-height: 1.85rem;
-  padding-bottom: 5.6rem;
-}
-.post-list__heading {
-  margin-bottom: 1rem;
 }
 .placeholder {
   width: 100%;
@@ -963,6 +962,110 @@ p code {
 .post__date {
   color: #787099;
   margin-bottom: 1rem;
+}
+.case-studies-title {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 200;
+}
+.case-studies-box {
+  margin-top: 4rem;
+  height: 50rem;
+  position: relative;
+  background: #48435e;
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+  color: #fff;
+}
+.case-studies-box:before,
+.case-studies-box:after {
+  content: '';
+  display: table;
+}
+.case-studies-box:after {
+  clear: both;
+}
+.case-studies-box:last-child {
+  margin-right: 0%;
+}
+.case {
+  -webkit-transition: all 0.15s ease-in;
+          transition: all 0.15s ease-in;
+  height: 25rem;
+  position: relative;
+}
+@media only screen and (min-width: 900px) {
+  .case {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: 0%;
+    height: 100%;
+  }
+  .case:before,
+  .case:after {
+    content: '';
+    display: table;
+  }
+  .case:after {
+    clear: both;
+  }
+}
+.eye-case {
+  position: relative;
+  background: url("/assets/img/eye-featured.jpg");
+  background-size: cover;
+}
+.eye-case:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(72,67,94,0.7);
+  -webkit-transition: all 0.15s ease-in;
+          transition: all 0.15s ease-in;
+}
+.eye-case:hover:after {
+  background: rgba(236,64,122,0.5);
+}
+.baywood-case {
+  position: relative;
+  background: url("/assets/img/baywood-featured.jpg");
+  background-size: cover;
+}
+.baywood-case:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(72,67,94,0.7);
+  -webkit-transition: all 0.15s ease-in;
+          transition: all 0.15s ease-in;
+}
+.baywood-case:hover:after {
+  background: rgba(28,123,172,0.5);
+}
+.case-content {
+  background: none;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  opacity: 0;
+  z-index: 1000;
+  -webkit-transition: all 0.15s ease-in;
+          transition: all 0.15s ease-in;
+}
+.active > .case-content {
+  bottom: 2rem;
+  opacity: 1;
 }
 .page-title {
   margin-bottom: 2rem;

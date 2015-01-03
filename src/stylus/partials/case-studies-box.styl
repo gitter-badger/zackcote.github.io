@@ -1,0 +1,60 @@
+.case-studies-title
+    position absolute
+    top 2rem
+    left 2rem
+    z-index 200
+.case-studies-box
+    margin-top 4rem
+    height 50rem
+    position relative
+    background color-primary
+    col(1)
+    color color-background
+
+.case
+    {z-transition}
+    height 25rem
+    position relative
+    +above(beta)
+        span(1/2)
+        height 100%
+
+.eye-case
+    position relative
+    background url("/assets/img/eye-featured.jpg")
+    background-size cover
+    &:after
+        position absolute
+        width 100%
+        height 100%
+        background alpha(color-primary, .7)
+        {z-transition}
+    &:hover:after
+            background alpha(color-eye, .5)
+
+.baywood-case
+    position relative
+    background url("/assets/img/baywood-featured.jpg")
+    background-size cover
+    &:after
+        position absolute
+        width 100%
+        height 100%
+        background alpha(color-primary, .7)
+        {z-transition}
+    &:hover:after
+        background alpha(color-baywood, .5)
+
+.case-content
+    background none
+    color white
+    position absolute
+    bottom 0
+    left 2rem
+    opacity 0
+    z-index 1000
+    {z-transition}
+
+.active > .case-content
+    bottom 2rem
+    opacity 1

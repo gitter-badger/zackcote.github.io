@@ -1,11 +1,14 @@
 ---
 layout: post
-title:  "Case Study: Eye for Sound"
+title:  "Eye for Sound"
 date:   2014-12-20 17:11:03
 categories:
-    - Case Studies
+    - case-studies
     - Development
     - Design
+nickname: eye
+featured-image: 'assets/img/eye-featured.jpg'
+actions: Development | Front-end Design | Content Strategy | UX
 ---
 
 *Lorem* ipsum dolor **sit amet, consectetur** adipisicing elit. Pariatur soluta, totam explicabo ut quaerat delectus excepturi itaque voluptatum! Alias nostrum odio quas, culpa, amet fugit fugiat harum beatae suscipit magnam modi quaerat a. Ipsa nobis unde consectetur! Porro qui neque harum, ipsa, necessitatibus nesciunt, blanditiis at commodi ducimus iste in.

@@ -1,8 +1,14 @@
 ---
 layout: post
-title:  "Case Study: Baywood"
+title:  "Baywood"
 date:   2014-09-23 09:11:03
-categories: personal
+categories:
+    - case-studies
+    - development
+    - design
+featured-image: "assets/img/baywood-featured.jpg"
+nickname: baywood
+actions: Branding | Development | Front-end Design | Content Strategy | UX
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
