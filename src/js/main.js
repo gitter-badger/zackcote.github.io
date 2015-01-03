@@ -575,12 +575,13 @@
                 $( this ).removeClass( "active" );
             });
         }
-        caseStudyHover();
 
         ;(function ($) {
             'use strict';
-            var $body    = $('html, body'),
-            content  = $('#ss-wrapper').smoothState({
+            caseStudyHover();
+
+            var $body = $('html, body'),
+                content   = $('#ss-wrapper').smoothState({
                 prefetch: true,
                 pageCacheSize: 4,
                 onStart: {

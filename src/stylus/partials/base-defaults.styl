@@ -12,7 +12,7 @@ img
     height auto
 
 p, ul, ol, img, .highlight
-    margin-bottom paragraph-space
+    margin-bottom 2.5rem
 
 ul
     list-style-position inside
@@ -20,10 +20,15 @@ ul
 main
     flex 1
 
-h1, h2, h3, h4, h5, h6
-    {font-medium}
+h1
+    {font-large}
     +above(beta)
         {font-xlarge}
+
+h2, h3, h4, h5, h6
+    {font-xmedium}
+    +above(beta)
+        {font-large}
 
 h2
     margin-bottom 1rem

@@ -3,9 +3,10 @@
     top 2rem
     left 2rem
     z-index 200
+
 .case-studies-box
-    margin-top 4rem
-    height 50rem
+    margin 2rem 0
+    height 40rem
     position relative
     background color-primary
     col(1)
@@ -13,8 +14,9 @@
 
 .case
     {z-transition}
-    height 25rem
+    height 20rem
     position relative
+    span(1/1)
     +above(beta)
         span(1/2)
         height 100%
@@ -46,6 +48,8 @@
         background alpha(color-baywood, .5)
 
 .case-content
+    +below(alpha)
+        opacity 1
     background none
     color white
     position absolute
@@ -54,6 +58,9 @@
     opacity 0
     z-index 1000
     {z-transition}
+    {font-small}
+    +above(beta)
+        {font-medium}
 
 .active > .case-content
     bottom 2rem
