@@ -1,32 +1,23 @@
 ---
 layout: post
 title:  "Baywood"
-date:   2014-09-23 09:11:03
+date: 2014-09-23 09:11:03
+featured-image: "assets/img/baywood-featured.jpg"
+nickname: baywood
+actions: Branding | Development | Front-end Design | Content Strategy | UX
 categories:
     - case-studies
     - development
     - design
-featured-image: "assets/img/baywood-featured.jpg"
-nickname: baywood
-actions: Branding | Development | Front-end Design | Content Strategy | UX
 ---
 
-You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
-To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.
+####Overview
+Baywood designs and sells unique wooden sunglasses out of Newport, RI. I met the owner Jim on Reddit when he [shared Baywood with r/providence](http://www.reddit.com/r/providence/comments/23fjlf/welcome_to_baywood_a_newport_based_wood_and/). In early 2014 Baywood enlisted me to help them with a total product relaunch.
 
-Jekyll also offers powerful support for code snippets:
+####The Problem
+Jim's sunglasses company was doing great in the boutiques of Newport, but his online storefront was struggling. Baywood's existing site was based on a free template and suffered from usability issues and struggled to keep users engaged throughout the checkout process.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+####The Solution
+I rebuilt Baywoodgear.com from the ground up with an emphasis on useability and consistiency. Jim now has a resilient platform for his business that will grow alongside his customer base.
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
-
-[jekyll-gh]: https://github.com/mojombo/jekyll
-[jekyll]:    http://jekyllrb.com
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem suscipit error laboriosam amet iusto, quod dignissimos. Est id adipisci eveniet omnis labore obcaecati reprehenderit doloremque molestias, architecto asperiores quo voluptatem ducimus ipsum quas consequatur in, nostrum necessitatibus dolor fugit excepturi ab corporis, ad rerum. Architecto suscipit eos aut aliquam laudantium dicta, nisi molestiae, consequatur praesentium magni, placeat velit! Expedita ipsum commodi laboriosam qui eius doloribus ducimus omnis porro, amet vitae sed adipisci dolores veritatis dolorum magni nesciunt voluptates accusantium voluptatem beatae consectetur repellendus repudiandae sequi nisi. Distinctio commodi ea laborum, repudiandae suscipit aperiam debitis voluptatum ex perferendis soluta at quaerat aspernatur corporis, pariatur fugit, autem sed similique, atque ab ad temporibus delectus nam harum iusto! Odio quaerat modi in dicta libero distinctio ipsum vel asperiores! Ipsam inventore, et voluptatibus numquam consequuntur sequi perferendis provident aliquid ipsa porro iste optio magni temporibus aut molestiae voluptate commodi unde officia, fugit veniam eos dolor! Officia, quia ex neque voluptatibus similique repellendus reprehenderit explicabo consectetur recusandae provident pariatur, harum est quasi iure sit magnam ipsum dolorum aperiam nihil necessitatibus aliquid reiciendis velit cum molestias obcaecati! Velit, quae, itaque! Doloribus modi, voluptates. Dolores, magni deleniti tempore. Corporis accusantium ipsum voluptatem recusandae quas dolor ipsam cum nisi voluptatibus, nemo nulla molestiae voluptates, perferendis consectetur alias est cumque similique laborum minima laudantium distinctio error. Voluptatum, reprehenderit quaerat quibusdam voluptate quos eveniet eum dignissimos veniam, impedit quia ullam. Necessitatibus dolorum, libero expedita aliquid ducimus, in officiis consequatur rerum voluptatem velit culpa aliquam porro eligendi animi sit esse numquam nam recusandae aperiam ratione, soluta dolorem temporibus dolores suscipit. Molestias officiis ipsum quasi non est hic sed, maiores amet mollitia nihil rerum officia, quos consequatur quis sit culpa, quaerat dicta! Animi, voluptas quae perspiciatis. Molestias labore earum optio ipsam expedita dolorum. Harum molestiae dicta error voluptatum accusantium dolores! Magni fugit recusandae, repellendus accusamus labore deserunt soluta voluptate a laudantium omnis perferendis alias, odio sequi inventore explicabo dignissimos nihil ducimus quam. Sed molestiae qui, debitis, placeat veniam numquam nesciunt ipsam facilis et inventore voluptate? Inventore in aperiam perspiciatis natus quibusdam odio quasi sed non? Molestias reprehenderit voluptatum incidunt exercitationem eos labore voluptates fugiat perspiciatis numquam similique voluptas, laboriosam odit autem, praesentium, inventore cupiditate quos aspernatur quaerat, mollitia neque nihil earum aliquid? Sit consequatur ea sapiente at molestiae earum vel repudiandae, deserunt, nesciunt doloremque impedit quos tempora tempore accusamus, voluptates alias. Officiis ducimus laboriosam, unde suscipit optio, perferendis itaque, illum beatae laborum molestiae dolores eius debitis, quisquam expedita vitae. Nostrum deserunt quaerat, id nesciunt ipsam ipsa. Qui impedit, dolores tempora, magnam libero aspernatur perspiciatis repellendus harum, quia perferendis iusto, ratione nostrum aliquam architecto quod! Omnis odio excepturi, corporis aliquid laudantium voluptate ipsam natus sed quo, quaerat amet provident quas dolores similique consectetur quos delectus dicta. Est consequuntur dicta architecto porro sint assumenda aliquid dignissimos aliquam, pariatur inventore, earum nisi aut nam necessitatibus magni ipsam quaerat suscipit nobis sed. Sed quas blanditiis eos nobis vel eius in. Eaque dolorum quae a, ut, iure odit vero laudantium deserunt sequi modi neque sint voluptatibus sunt.
+![Main Screenshot](/assets/img/)

@@ -25,10 +25,16 @@ h1
     +above(beta)
         {font-xlarge}
 
-h2, h3, h4, h5, h6
+h2, h3
     {font-xmedium}
     +above(beta)
         {font-large}
+
+h4, h5, h6
+    {font-base}
+    +above(beta)
+        {font-medium}
+        margin-bottom 1rem
 
 h2
     margin-bottom 1rem
@@ -55,6 +61,13 @@ p code
     padding 1rem space 1rem space
     border none
     color white
-    font-weight bold
+    font-weight 200
     background color-primary
     display inline
+    {z-transition}
+    &:hover
+        background darken(color-primary, 20%)
+        cursor pointer
+
+input
+    font-family 'sweden_sans', Arial, sans-serif

@@ -4,7 +4,7 @@ layout: base
 
 <article class="post box {{ page.nickname }}-box">
     <div class="box__content animated animated--slideInRight">
-        <header class="post__header">
+        <header class="post__header {{ page.nickname }}-page-header">
             {% include breadcrumb--post.html %}
             <h1 class="post__title">{{ page.title }}</h1>
             <p class="post__date">{{ page.date | date: "%-d %b %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>

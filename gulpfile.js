@@ -16,6 +16,7 @@ var imagemin     = require('gulp-imagemin');
 var pngcrush     = require('imagemin-pngcrush');
 var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify');
+var sourcemaps   = require('gulp-sourcemaps');
 var srcPath = {
     styles: 'src/stylus/**/*.styl',
     images: 'src/images/*'
@@ -89,7 +90,9 @@ gulp.task('styles', ['asset-clean'], function () {
 gulp.task('js', function () {
     return gulp.src('src/js/main.js')
     .pipe(plumber())
-    .pipe(uglify())
+    .pipe(sourcemaps.init())
+        // .pipe(uglify())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('assets/js/'))
     .pipe(gulp.dest('_site/assets/js/'));
 });
