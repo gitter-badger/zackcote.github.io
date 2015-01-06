@@ -1136,6 +1136,11 @@ input {
   -webkit-transition: all 0.15s ease-in;
           transition: all 0.15s ease-in;
 }
+@media only screen and (max-width: 600px) {
+  .eye-case:after {
+    background: rgba(236,64,122,0.5);
+  }
+}
 .eye-case:hover:after {
   background: rgba(236,64,122,0.5);
 }
@@ -1151,6 +1156,11 @@ input {
   background: rgba(72,67,94,0.7);
   -webkit-transition: all 0.15s ease-in;
           transition: all 0.15s ease-in;
+}
+@media only screen and (max-width: 600px) {
+  .baywood-case:after {
+    background: rgba(28,123,172,0.5);
+  }
 }
 .baywood-case:hover:after {
   background: rgba(28,123,172,0.5);
