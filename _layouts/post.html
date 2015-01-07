@@ -12,6 +12,9 @@ layout: base
         </header>
         <div class="post__content">
             {{ content }}
+            {% if page.site-url != null %}
+                <a href="{{ page.site-url }}" class="button">Visit Site</a>
+            {% endif %}
         </div>
     </div>
 </article>

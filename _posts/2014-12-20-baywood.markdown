@@ -9,6 +9,7 @@ categories:
     - case-studies
     - development
     - design
+site-url: http://baywoodgear.com
 ---
 
 ####Overview
@@ -19,5 +20,3 @@ Jim's sunglasses company was doing great in the boutiques of Newport, but his on
 
 ####The Solution
 I rebuilt Baywoodgear.com from the ground up with an emphasis on useability and consistiency. Jim now has a resilient platform for his business that will grow alongside his customer base.
-
-![Main Screenshot](/assets/img/)

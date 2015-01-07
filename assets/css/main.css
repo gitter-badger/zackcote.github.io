@@ -272,8 +272,9 @@ p code {
           transition: all 0.15s ease-in;
 }
 .button:hover {
-  background: #3a364b;
+  background: #3e372d;
   cursor: pointer;
+  color: #fff;
 }
 input {
   font-family: 'sweden_sans', Arial, sans-serif;
@@ -1200,13 +1201,12 @@ input {
   *zoom: 1;
   position: relative;
   clear: both;
-  height: 30rem;
   color: #fff;
   padding: 2rem;
   margin: 2rem 0;
   background-color: #ad4444;
-  background: -webkit-linear-gradient(left, rgba(173,68,68,0) 0%, #ad4444 70%, #ad4444 100%), url("/assets/img/zack-flower2.jpg") no-repeat;
-  background: linear-gradient(to right, rgba(173,68,68,0) 0%, #ad4444 70%, #ad4444 100%), url("/assets/img/zack-flower2.jpg") no-repeat;
+  background: -webkit-linear-gradient(left, rgba(173,68,68,0) 0%, #ad4444 40%, #ad4444 100%), url("/assets/img/zack-flower2.jpg") no-repeat;
+  background: linear-gradient(to right, rgba(173,68,68,0) 0%, #ad4444 40%, #ad4444 100%), url("/assets/img/zack-flower2.jpg") no-repeat;
   background-size: 100% 100%, auto 100%;
   background-position: left top;
   text-align: right;
@@ -1235,10 +1235,6 @@ input {
 }
 .newsletter-box form {
   text-align: right;
-  width: 75%;
-  position: absolute;
-  right: 2rem;
-  bottom: 2rem;
 }
 .newsletter-box form p {
   font-size: 1.8rem;
@@ -1246,14 +1242,18 @@ input {
   line-height: 2rem;
 }
 @media only screen and (min-width: 900px) {
-  .newsletter-box form p {
+  .newsletter-box form {
     font-size: 2.2rem;
     line-height: 2.5rem;
+    width: 55%;
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
   }
 }
 @media only screen and (min-width: 1200px) {
   .newsletter-box form {
-    width: 50%;
+    width: 35%;
   }
 }
 .email {
@@ -1274,6 +1274,21 @@ input {
 ::-moz-selection {
   background: #ad4444;
   color: #fff;
+}
+@media only screen and (max-width: 600px) {
+  .email {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .email {
+    width: 25rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .button {
+    width: 100%;
+  }
 }
 .inner-wrap {
   background: #fff;

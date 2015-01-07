@@ -29,20 +29,22 @@ var messages = {
 };
 
 //change cp.exec to cp.spawn if on windows
-gulp.task('jekyll-build', function (done) {
+gulp.task('jekyll-build', function(done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('jekyll.bat', ['build'], {stdio: 'inherit'}).on('close', done);
+    return cp.spawn('jekyll.bat', ['build'], {
+        stdio: 'inherit'
+    }).on('close', done);
 });
 
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-build'], function() {
     browserSync.reload();
 });
 
-gulp.task('bs-reload', function () {
+gulp.task('bs-reload', function() {
     browserSync.reload();
 });
 
-gulp.task('browser-sync', function () {
+gulp.task('browser-sync', function() {
     browserSync({
         server: {
             baseDir: "_site"
@@ -52,52 +54,56 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('asset-clean', function(cb) {
-  // You can use multiple globbing patterns as you would with `gulp.src`
-  del(['_site/assets/css/*', 'assets/css/*' ], cb);
+    // You can use multiple globbing patterns as you would with `gulp.src`
+    del(['_site/assets/css/*', 'assets/css/*'], cb);
 });
 
-gulp.task('images', function () {
+gulp.task('images', function() {
     return gulp.src(srcPath.images)
-    .pipe(plumber())
-    .pipe(imagemin({
-        optimizationLevel: 7,
-        progressive: true,
-        svgoPlugins: [{removeViewBox: false}],
-        use: [pngcrush()]
-    }))
-    .pipe(gulp.dest(destPath.images));
+        .pipe(plumber())
+        .pipe(imagemin({
+            optimizationLevel: 7,
+            progressive: true,
+            svgoPlugins: [{
+                removeViewBox: false
+            }],
+            use: [pngcrush()]
+        }))
+        .pipe(gulp.dest(destPath.images));
 });
 
-gulp.task('styles', ['asset-clean'], function () {
+gulp.task('styles', ['asset-clean'], function() {
     return gulp.src('src/stylus/main.styl')
-    .pipe(plumber())
-    .pipe(stylus({
-        use: [
-        jeet(),
-        rupture()
-        ]
-    }))
-    .pipe(autoprefixer())
-    .pipe(gulp.dest('assets/css'))
-    .pipe(csso())
-    .pipe(rename("main.min.css"))
-    .pipe(gulp.dest('assets/css'))
-    .pipe(gulp.dest('_site/assets/css'))
-    .pipe(size())
-    .pipe(reload({stream: true}));
+        .pipe(plumber())
+        .pipe(stylus({
+            use: [
+                jeet(),
+                rupture()
+            ]
+        }))
+        .pipe(autoprefixer())
+        .pipe(gulp.dest('assets/css'))
+        .pipe(csso())
+        .pipe(rename("main.min.css"))
+        .pipe(gulp.dest('assets/css'))
+        .pipe(gulp.dest('_site/assets/css'))
+        .pipe(size())
+        .pipe(reload({
+            stream: true
+        }));
 });
 
-gulp.task('js', function () {
+gulp.task('js', function() {
     return gulp.src('src/js/main.js')
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
         // .pipe(uglify())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('assets/js/'))
-    .pipe(gulp.dest('_site/assets/js/'));
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('assets/js/'))
+        .pipe(gulp.dest('_site/assets/js/'));
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', function() {
     gulp.watch(srcPath.styles, ['styles']);
     gulp.watch(srcPath.images, ['images']);
     gulp.watch('src/js/main.js', ['js', 'bs-reload']);
