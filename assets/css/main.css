@@ -973,7 +973,7 @@ input {
   width: 90%;
   float: right;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
   .box__content {
     margin-top: 15rem;
     *zoom: 1;
