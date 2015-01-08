@@ -10,13 +10,15 @@ categories:
     - development
     - design
 site-url: "http://eyeforsound.com"
+snippet:
+    How I built a resilent new platform for Serj Tankian.
 ---
 
 ####Overview
-Baywood designs and sells unique wooden sunglasses out of Newport, RI. I met the owner Jim on Reddit when he [shared Baywood with r/providence](http://www.reddit.com/r/providence/comments/23fjlf/welcome_to_baywood_a_newport_based_wood_and/). In early 2014 Baywood enlisted me to help them with a total product relaunch.
+Eye for Sound is a unique platform that connects visual art and music through technology. Eye for Sound is the brainchild of grammy-winning musician and artist Serj Tankian, of *System of a Down*. A member of Serj's team referred him to me to build a speedy and responsive site for Eye for Sound.
 
 ####The Problem
-Jim's sunglasses company was doing great in the boutiques of Newport, but his online storefront was struggling. Baywood's existing site was based on a free template and suffered from usability issues and struggled to keep users engaged throughout the checkout process.
+The Eye for Sound team had great success with their mobile apps, but needed a promotional site to increase downloads and as a platform to sell original artwork.
 
 ####The Solution
-I rebuilt Baywoodgear.com from the ground up with an emphasis on useability and consistiency. Jim now has a resilient platform for his business that will grow alongside his customer base.
+I built Eye for Sound a streamlined responsive website using Wordpress and the Big Cartel ecommerce platform. Serj has seen increased sales to his artwork and increased app downloads.

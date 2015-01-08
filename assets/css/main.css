@@ -1290,6 +1290,11 @@ input {
     width: 100%;
   }
 }
+@media only screen and (min-width: 1200px) {
+  .hero__text {
+    margin-bottom: 0;
+  }
+}
 .inner-wrap {
   background: #fff;
 }

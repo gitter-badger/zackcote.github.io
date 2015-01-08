@@ -10,6 +10,8 @@ categories:
     - development
     - design
 site-url: http://baywoodgear.com
+snippet:
+    How I built a resilent new platform for a sunglasses company in Newport, RI.
 ---
 
 ####Overview
