@@ -1284,6 +1284,7 @@ input {
 @media only screen and (max-width: 600px) {
   .email {
     width: 100%;
+    padding: 2rem 2rem;
   }
 }
 @media only screen and (min-width: 1200px) {
