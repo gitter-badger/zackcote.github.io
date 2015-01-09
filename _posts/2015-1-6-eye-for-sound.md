@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Eye for Sound"
-date:   2014-12-20 17:11:03
+date:   2015-01-06 17:11:03
 featured-image: 'assets/img/eye-featured.jpg'
 nickname: eye
 categories: case-study

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Zackcote.com: It's Here"
-date:   2014-12-20 21:20:00
+date:   2015-1-8 21:20:00
 image:
 snippet: 2014 was a busy year of client work, and I've finally found the time to launch my portfolio.
 ---
