@@ -248,11 +248,13 @@ a {
 a:hover {
   color: #ad4444;
 }
-p a {
+p a,
+.post__content a {
   color: #ad4444;
   font-weight: bold;
 }
-p a:hover {
+p a:hover,
+.post__content a:hover {
   text-decoration: underline;
 }
 p code {
@@ -263,12 +265,15 @@ p code {
 .button {
   padding: 1rem 2rem 1rem 2rem;
   border: none;
-  color: #fff;
+  color: #fff !important;
   font-weight: 200;
   background: #48435e;
   display: inline;
   -webkit-transition: all 0.15s ease-in;
           transition: all 0.15s ease-in;
+}
+.button a {
+  color: #fff;
 }
 .button:hover {
   background: #3e372d;
@@ -1060,6 +1065,9 @@ input {
 .post__date {
   color: #787099;
   margin-bottom: 1rem;
+}
+.post__content img {
+  width: 100%;
 }
 .case-studies-title {
   position: absolute;

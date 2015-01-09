@@ -4,11 +4,8 @@ title:  "Baywood"
 date: 2014-09-23 09:11:03
 featured-image: "assets/img/baywood-featured.jpg"
 nickname: baywood
+categories: case-study
 actions: Branding | Development | Front-end Design | Content Strategy | UX
-categories:
-    - case-studies
-    - development
-    - design
 site-url: http://baywoodgear.com
 snippet:
     How I built a resilent new platform for a sunglasses company in Newport, RI.

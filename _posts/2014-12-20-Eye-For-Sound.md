@@ -4,11 +4,8 @@ title:  "Eye for Sound"
 date:   2014-12-20 17:11:03
 featured-image: 'assets/img/eye-featured.jpg'
 nickname: eye
+categories: case-study
 actions: Development | Front-end Design | Content Strategy | UX
-categories:
-    - case-studies
-    - development
-    - design
 site-url: "http://eyeforsound.com"
 snippet:
     How I built a resilent new platform for Serj Tankian.

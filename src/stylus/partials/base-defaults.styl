@@ -46,7 +46,7 @@ a
     &:hover
         color color-accent
 
-p a
+p a,.post__content a
     color color-accent
     font-weight bold
     &:hover
@@ -60,11 +60,13 @@ p code
 .button
     padding 1rem space 1rem space
     border none
-    color white
+    color white !important
     font-weight 200
     background color-primary
     display inline
     {z-transition}
+    a
+        color white
     &:hover
         background color-secondary
         cursor pointer
