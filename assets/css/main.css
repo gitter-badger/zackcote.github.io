@@ -289,6 +289,7 @@ p code {
 }
 input {
   font-family: 'sweden_sans', Arial, sans-serif;
+  -webkit-appearance: none;
 }
 .wrapper {
   min-height: 100vh;
@@ -302,18 +303,13 @@ input {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
   .wrapper {
     margin: 0 auto;
     padding-left: 4rem;
     padding-right: 4rem;
     padding-bottom: 1rem;
     padding-top: 4rem;
-  }
-}
-@media only screen and (min-width: 900px) {
-  .wrapper {
-    width: 900px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -385,9 +381,10 @@ input {
   overflow: hidden;
   *zoom: 1;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .behind-index {
     margin: 2rem;
+    margin-bottom: 0rem;
   }
 }
 .behind-index:before,
@@ -402,7 +399,7 @@ input {
   border-bottom: 1rem solid #ad4444;
   margin-bottom: 2rem;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .header {
     margin: 2rem 2rem 0 2rem;
   }
@@ -470,7 +467,7 @@ input {
   background-color: #fff;
   text-align: center;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .footer {
     margin: 0 2rem 1rem 2rem;
   }
@@ -953,7 +950,7 @@ input {
   overflow: hidden;
   margin-bottom: 2rem;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .box {
     margin-top: 2rem;
   }
@@ -987,7 +984,7 @@ input {
 }
 @media only screen and (min-width: 900px) {
   .box__content {
-    margin-top: 15rem;
+    margin-top: 10rem;
     *zoom: 1;
     float: left;
     clear: none;
@@ -1010,22 +1007,12 @@ input {
     margin-right: 0%;
   }
 }
-@media only screen and (min-width: 1200px) {
-  .box__content {
-    max-width: 100rem;
-    margin-top: 10rem;
-  }
-}
 .eye-box {
   background: #ec407a;
-}
-@media only screen and (min-width: 600px) {
-  .eye-box {
-    background: -webkit-linear-gradient(top, rgba(236,64,122,0.3) 0%, #ec407a 30rem, #ec407a 100%), url("/assets/img/eye-featured.jpg") no-repeat;
-    background: linear-gradient(to bottom, rgba(236,64,122,0.3) 0%, #ec407a 30rem, #ec407a 100%), url("/assets/img/eye-featured.jpg") no-repeat;
-    background-size: 100% 100%, 100% auto !important;
-    background-position: bottom, top;
-  }
+  background: -webkit-linear-gradient(top, rgba(236,64,122,0.3) 0%, #ec407a 30rem, #ec407a 100%), url("/assets/img/eye-featured.jpg") no-repeat;
+  background: linear-gradient(to bottom, rgba(236,64,122,0.3) 0%, #ec407a 30rem, #ec407a 100%), url("/assets/img/eye-featured.jpg") no-repeat;
+  background-size: 100% 100%, 100% auto !important;
+  background-position: bottom, top;
 }
 @media only screen and (min-width: 900px) {
   .eye-box {
@@ -1041,14 +1028,10 @@ input {
 }
 .baywood-box {
   background: #1c7bac;
-}
-@media only screen and (min-width: 600px) {
-  .baywood-box {
-    background: -webkit-linear-gradient(top, rgba(28,123,172,0.3) 0%, #1c7bac 29rem, #1c7bac 100%), url("/assets/img/baywood-featured.jpg") no-repeat;
-    background: linear-gradient(to bottom, rgba(28,123,172,0.3) 0%, #1c7bac 29rem, #1c7bac 100%), url("/assets/img/baywood-featured.jpg") no-repeat;
-    background-position: bottom, top;
-    background-size: 100% 100%, 100% auto !important;
-  }
+  background: -webkit-linear-gradient(top, rgba(28,123,172,0.3) 0%, #1c7bac 29rem, #1c7bac 100%), url("/assets/img/baywood-featured.jpg") no-repeat;
+  background: linear-gradient(to bottom, rgba(28,123,172,0.3) 0%, #1c7bac 29rem, #1c7bac 100%), url("/assets/img/baywood-featured.jpg") no-repeat;
+  background-position: bottom, top;
+  background-size: 100% 100%, 100% auto !important;
 }
 @media only screen and (min-width: 900px) {
   .baywood-box {
@@ -1271,8 +1254,19 @@ input {
   }
 }
 .email {
-  padding: 1rem;
   border: none;
+  padding: 1rem;
+}
+@media only screen and (max-width: 900px) {
+  .email {
+    width: 100%;
+    padding: 2rem 2rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .email {
+    width: 25rem;
+  }
 }
 .page-title {
   margin-bottom: 2rem;
@@ -1288,17 +1282,6 @@ input {
 ::-moz-selection {
   background: #ad4444;
   color: #fff;
-}
-@media only screen and (max-width: 600px) {
-  .email {
-    width: 100%;
-    padding: 2rem 2rem;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .email {
-    width: 25rem;
-  }
 }
 @media only screen and (min-width: 1200px) {
   .hero__text {
