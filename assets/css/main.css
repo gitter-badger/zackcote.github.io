@@ -1217,10 +1217,10 @@ input {
   clear: both;
   color: #fff;
   padding: 2rem;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
   background-color: #ad4444;
-  background: -webkit-linear-gradient(left, rgba(173,68,68,0) 0%, #ad4444 40%, #ad4444 100%), url("/assets/img/zack-flower2.jpg") no-repeat;
-  background: linear-gradient(to right, rgba(173,68,68,0) 0%, #ad4444 40%, #ad4444 100%), url("/assets/img/zack-flower2.jpg") no-repeat;
+  background: -webkit-linear-gradient(left, rgba(173,68,68,0) 0%, #ad4444 60%, #ad4444 100%), url("/assets/img/zack-flower2.jpg") no-repeat;
+  background: linear-gradient(to right, rgba(173,68,68,0) 0%, #ad4444 60%, #ad4444 100%), url("/assets/img/zack-flower2.jpg") no-repeat;
   background-size: 100% 100%, auto 100%;
   background-position: left top;
   text-align: right;

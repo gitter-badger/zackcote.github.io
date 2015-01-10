@@ -8,7 +8,7 @@ categories: case-study
 actions: Development | Front-end Design | Content Strategy | UX
 site-url: "http://eyeforsound.com"
 snippet:
-    How I built a resilent new platform for Serj Tankian.
+    How I built a detailed marketing site for Serj Tankian.
 ---
 
 ####Overview
