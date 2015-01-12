@@ -581,7 +581,7 @@
             caseStudyHover();
 
             var $body = $('html, body'),
-                content   = $('#ss-wrapper').smoothState({
+            content   = $('#ss-wrapper').smoothState({
                 prefetch: true,
                 pageCacheSize: 4,
                 onStart: {

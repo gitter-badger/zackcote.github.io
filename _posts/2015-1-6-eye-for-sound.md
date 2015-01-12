@@ -20,4 +20,5 @@ The Eye for Sound team had great success with their mobile apps, but needed a pr
 ####The Solution
 I built Eye for Sound a streamlined responsive website using Wordpress and the Big Cartel ecommerce platform. Serj has seen increased sales to his artwork and increased app downloads.
 
-![eye for sound site](/assets/img/eyeForSound.jpg)
+![eye for sound site](/assets/img/eye-for-sound.jpg)
+![eye for sound app landing](/assets/img/eye-for-sound-2.jpg)
