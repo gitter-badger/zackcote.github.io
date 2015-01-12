@@ -6,7 +6,7 @@ image:
 snippet: 2014 was a busy year of client work, and I've finally found the time to launch my portfolio.
 ---
 
-2014 was a busy year of client work, and I've finally found the time to launch my portfolio. There's an ethos in the development world to 'ship it, fix it' based on the idea that a piece of software is never *truly* done. There is always room for improvment. This site is no different, and I look forward to making improvements and design tweaks as the year progresses.
+2014 was a busy year of client work, and I've finally found the time to launch my portfolio. There's an ethos in the development world to 'ship it, fix it' based on the idea that a piece of software is never *truly* done. There is always room for improvement. This site is no different, and I look forward to making improvements and design tweaks as the year progresses.
 
 I feel similarly about personal growth.
 

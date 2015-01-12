@@ -8,7 +8,7 @@ categories: case-study
 actions: Branding | Development | Front-end Design | Content Strategy | UX
 site-url: http://baywoodgear.com
 snippet:
-    How I built a resilent new platform for a sunglasses company in Newport, RI.
+    How I built a resilient new platform for a sunglasses company in Newport, RI.
 ---
 
 ####Overview
@@ -18,6 +18,6 @@ Baywood designs and sells unique wooden sunglasses out of Newport, RI. I met the
 Jim's sunglasses company was doing great in the boutiques of Newport, but his online storefront was struggling. Baywood's existing site was based on a free template and suffered from usability issues and struggled to keep users engaged throughout the checkout process.
 
 ####The Solution
-I rebuilt Baywoodgear.com from the ground up with an emphasis on useability and consistiency. Jim now has a resilient platform for his business that will grow alongside his customer base.
+I rebuilt Baywoodgear.com from the ground up with an emphasis on usability and consistency. Jim now has a resilient platform for his business that will grow alongside his customer base.
 
 ![baywood site](/assets/img/baywood.jpg)

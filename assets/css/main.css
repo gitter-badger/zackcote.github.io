@@ -395,6 +395,9 @@ input {
 .behind-index:after {
   clear: both;
 }
+.inner-wrap {
+  background: #fff;
+}
 .header {
   border-bottom: 1rem solid #ad4444;
   margin-bottom: 2rem;
@@ -1051,6 +1054,7 @@ input {
 }
 .post__content img {
   width: 100%;
+  margin-bottom: 2rem;
 }
 .case-studies-title {
   position: absolute;
@@ -1287,7 +1291,4 @@ input {
   .hero__text {
     margin-bottom: 0;
   }
-}
-.inner-wrap {
-  background: #fff;
 }

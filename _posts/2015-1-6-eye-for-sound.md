@@ -12,7 +12,7 @@ snippet:
 ---
 
 ####Overview
-Eye for Sound is a unique platform that connects visual art and music through technology. Eye for Sound is the brainchild of grammy-winning musician and artist Serj Tankian, of *System of a Down*. A member of Serj's team referred him to me to build a speedy and responsive site for Eye for Sound.
+Eye for Sound is a unique platform that connects visual art and music through technology. Eye for Sound is the brainchild of Grammy-winning musician and artist Serj Tankian, of *System of a Down*. A member of Serj's team referred him to me to build a speedy and responsive site for Eye for Sound.
 
 ####The Problem
 The Eye for Sound team had great success with their mobile apps, but needed a promotional site to increase downloads and as a platform to sell original artwork.
