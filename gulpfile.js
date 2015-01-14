@@ -29,22 +29,22 @@ var messages = {
 };
 
 //change cp.exec to cp.spawn if on windows
-gulp.task('jekyll-build', function(done) {
+gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn('jekyll.bat', ['build'], {
         stdio: 'inherit'
     }).on('close', done);
 });
 
-gulp.task('jekyll-rebuild', ['jekyll-build'], function() {
+gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     browserSync.reload();
 });
 
-gulp.task('bs-reload', function() {
+gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
     browserSync({
         server: {
             baseDir: "_site"
@@ -53,12 +53,12 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('asset-clean', function(cb) {
+gulp.task('asset-clean', function (cb) {
     // You can use multiple globbing patterns as you would with `gulp.src`
     del(['_site/assets/css/*', 'assets/css/*'], cb);
 });
 
-gulp.task('images', function() {
+gulp.task('images', function () {
     return gulp.src(srcPath.images)
         .pipe(plumber())
         .pipe(imagemin({
@@ -72,7 +72,7 @@ gulp.task('images', function() {
         .pipe(gulp.dest(destPath.images));
 });
 
-gulp.task('styles', ['asset-clean'], function() {
+gulp.task('styles', ['asset-clean'], function () {
     return gulp.src('src/stylus/main.styl')
         .pipe(plumber())
         .pipe(stylus({
@@ -93,7 +93,7 @@ gulp.task('styles', ['asset-clean'], function() {
         }));
 });
 
-gulp.task('js', function() {
+gulp.task('js', function () {
     return gulp.src('src/js/main.js')
         .pipe(plumber())
         .pipe(sourcemaps.init())
@@ -103,7 +103,7 @@ gulp.task('js', function() {
         .pipe(gulp.dest('_site/assets/js/'));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     gulp.watch(srcPath.styles, ['styles']);
     gulp.watch(srcPath.images, ['images']);
     gulp.watch('src/js/main.js', ['js', 'bs-reload']);
