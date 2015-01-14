@@ -1,35 +1,32 @@
-
-//Vendor
+//Vendor (accessed via Npm)
 @import 'jeet';                         //best grid system ever
 @import 'rupture';                      //brilliant breakpoints
 
-//fonts
-@import 'partials/fonts';
-
-// //Base
-@import 'partials/base-reset';          //basic css reset
-@import 'partials/base-variables';      //non-rendering dependencies
-@import 'partials/base-helpers';        //non-rendering global helpers & mixins
-@import 'partials/base-defaults';       //type selector general styles
-
-//Sections
-@import 'partials/containers';
-@import 'partials/header';              //site-wide header
-@import 'partials/footer';
+//Base
+@import 'base/reset';          //basic css reset
+@import 'base/fonts';          //fonts (via @font-face)
+@import 'base/breakpoints';    //breakpoints for media queries
+@import 'base/measures';       //Sizes. Spacers, common margins, etc.
+@import 'base/colors';         //non-rendering dependencies
+@import 'base/helpers';        //non-rendering global helpers & mixins
+@import 'base/typography';     //typography default fsz-lh pairs and block mixins
+@import 'base/defaults';       //styles for plain elements and some universal classes
 
 //Modules
-@import 'partials/breadcrumb';
-@import 'partials/code-highlighting';
-@import 'partials/post-list';
-@import 'partials/placeholder';
-@import 'partials/smooth-state';
-@import 'partials/hire-box';
-@import 'partials/box';
-@import 'partials/post';
-@import 'partials/case-studies-box';
-@import 'partials/newsletter-box';
-@import 'partials/page-headers';
-
+@import 'containers';
+@import 'header';
+@import 'footer';
+@import 'breadcrumb';
+@import 'code-highlighting';
+@import 'post-list';
+@import 'placeholder';
+@import 'smooth-state';
+@import 'hire-box';
+@import 'box';
+@import 'post';
+@import 'case-studies-box';
+@import 'newsletter-box';
+@import 'page-headers';
 
 //Shame
-@import 'partials/shame';               //unsorted, ugly, hacky stuff
+@import 'shame';               //Hotfixes, unsectioned code, hacks, bugs, a kitchen-sink of crap!
