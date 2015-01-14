@@ -3,19 +3,13 @@ title: Zack Cote
 layout: base
 description: Zack Cote is a front-end developer and designer in Providence, Rhode Island who builds responsive websites for a range of devices.
 ---
-<div class="behind-index">
-    <div class="inner-wrap animated animated--slideInTop">
-        <section class="content">
-           <div class="placeholder"></div>
-           <p class="hero__text">
-            I'm Zack Cote, a creative developer in Providence, RI. I'm focused on designing scalable, responsive systems that work on any device. I'm also deeply interested in print, particularly zines and independent publishing. To get in touch quickly, <a href="http://www.twitter.com/zackcote_">follow me on Twitter @zackcote_.</a> For longer requests <a href="mailto:zackwcote@gmail.com">email me at zackwcote@gmail.com.</a>
-        </p>
-    </section>
-
-    <div class="sidebar">
+<div class="box {{ page.nickname }}-box">
+    <div class="box__content animated animated--slideInRight">
+        <div class="placeholder"></div>
+        <p class="hero__text">I'm Zack Cote, a creative developer in Providence, RI. I'm focused on designing scalable, responsive systems that work on any device. I'm also deeply interested in print, particularly zines and independent publishing. To get in touch quickly, <a href="http://www.twitter.com/zackcote_">follow me on Twitter @zackcote_.</a> For longer requests <a href="mailto:zackwcote@gmail.com">email me at zackwcote@gmail.com.</a></p>
         {% include post-list--limited.html %}
+        {% include case-studies-box.html %}
+        {% include newsletter-box.html %}
+        {% include hire-box.html %}
     </div>
-    {% include case-studies-box.html %}
-    {% include newsletter-box.html %}
-</div>
 </div>

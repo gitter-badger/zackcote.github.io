@@ -1,48 +1,21 @@
 .header
-    +below(beta)
-        margin space space 0 space
-    border-bottom 1rem solid color-accent
-    margin-bottom space
-
-.header--brown
-    border-color color-secondary
+    position absolute
+    width 100%
+    text-align center
+    top 2rem
+    z-index 1
+    color color-background
 
 .site-title
-    +below(alpha)
-         margin 0 space space 0
-    float left
     font-weight 100
     {font-medium}
-    margin-bottom space
+    margin-bottom 1rem
     &:before
         content "{ "
-        color color-accent
+        color color-primary
         font-weight bold
     &:after
         content " }"
-        color color-accent
+        color color-primary
         font-weight bold
-
-.header span
-    display none
-    color color-primary--light
-    +above(alpha + 10rem)
-        display inline
-        float left
-        margin-left space
-
-.site-nav
-    text-align center
-    margin space
-    {plainList}
-    li a
-        padding 1rem space
-        &:hover
-            background color-accent
-            color white
-    +above(alpha)
-        li
-            padding 1rem
-        li a
-            padding 1rem space
 

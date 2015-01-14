@@ -20,6 +20,9 @@ ul
 main
     flex 1
 
+h1, h2, h3, h4, h5, h6
+    text-align center
+
 h1
     {font-large}
     +above(beta)
@@ -54,23 +57,23 @@ p a,.post__content a
 
 p code
     background color-primary
-    color white
+    color color-background
     padding .25rem .5rem
 
 .button
     padding 1rem space 1rem space
     border none
-    color white !important
+    color color-background !important
     font-weight 200
     background color-primary
     display inline
     {z-transition}
     a
-        color white
+        color color-background
     &:hover
         background color-secondary
         cursor pointer
-        color white
+        color color-background
     +below(beta)
         width 100%
         display block
@@ -81,15 +84,26 @@ input
     -webkit-appearance none
 
 .accent-line
-    height 1rem
-    width 14rem
-    background color-accent
-    margin-bottom 2.5rem
+    max-width 60rem
+    margin 0 auto
+    &:after
+        height 1rem
+        width 14rem
+        background color-accent
+        margin-bottom 2.5rem
 
 .accent-line--alt
-    height 1rem
-    width 14rem
+    max-width 60rem
+    margin 0 auto
+    &:after
+        height 1rem
+        width 14rem
+        margin-left auto
+        margin-right 0
+        background color-secondary
+        margin-bottom 2.5rem
+
+p, ul, ol
+    max-width 60rem
     margin-left auto
-    margin-right 0
-    background color-secondary
-    margin-bottom 2.5rem
+    margin-right auto
