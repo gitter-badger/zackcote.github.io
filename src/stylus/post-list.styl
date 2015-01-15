@@ -1,25 +1,31 @@
 .post-list
-    text-align left
+    max-width none
     list-style none
-    margin-bottom 0
-    cf()
+    margin 0
+    p
+        max-width none
 
-.post-list__title
-    {font-xmedium}
-
-.post-list__date
-    {font-small}
-    color color-primary--light
+.post-list-box
+    background color-accent
+    color color-background
+    +below(beta)
+        text-align left
+    text-align center
+    padding 2rem 0
 
 .post-list__post
-    border-bottom 2px solid color-secondary
-    margin-bottom 2.5rem
-    {font-small}
+    margin-bottom 2rem
 
-.post-list__archive
-    float right
+.post-list__date
+    {z-transition}
     {font-small}
-    {plainLink}
+    font-weight 100
 
-.post-list__heading
-        text-align center
+.post-list__title
+    font-weight 100
+    {font-medium}
+    +above(beta)
+        {font-xmedium}
+
+.latest-post
+    float left

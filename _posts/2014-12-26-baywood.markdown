@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Baywood"
+title:  "Building Baywood: A Responsive Case Study"
 date: 2015-12-26 09:11:03
 featured-image: "assets/img/baywood-featured.jpg"
 nickname: baywood

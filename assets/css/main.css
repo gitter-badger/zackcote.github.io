@@ -240,9 +240,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-a:hover {
-  color: #ad4444;
-}
 p a,
 .post__content a {
   color: #ad4444;
@@ -390,26 +387,33 @@ input {
 }
 .header {
   position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+  color: #fff;
   width: 100%;
   text-align: center;
-  top: 2rem;
-  z-index: 1;
-  color: #fff;
 }
 .site-title {
   font-weight: 100;
-  font-size: 2.2rem;
-  line-height: 2.5rem;
+  font-size: 4.2rem;
+  line-height: 4.2rem;
   margin-bottom: 1rem;
+  width: 100%;
 }
 .site-title:before {
   content: "{ ";
-  color: #ad4444;
+  color: #48435e;
   font-weight: bold;
 }
 .site-title:after {
   content: " }";
-  color: #ad4444;
+  color: #48435e;
   font-weight: bold;
 }
 .footer {
@@ -701,41 +705,46 @@ input {
 /* Literal.Number.Integer.Long */
 }
 .post-list {
-  text-align: left;
+  max-width: none;
   list-style: none;
-  margin-bottom: 0;
-  *zoom: 1;
+  margin: 0;
 }
-.post-list:before,
-.post-list:after {
-  content: '';
-  display: table;
+.post-list p {
+  max-width: none;
 }
-.post-list:after {
-  clear: both;
+.post-list-box {
+  background: #ad4444;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
 }
-.post-list__title {
-  font-size: 2.8rem;
-  line-height: 2.5rem;
-}
-.post-list__date {
-  font-size: 1.44rem;
-  line-height: 1.85rem;
-  color: #787099;
+@media only screen and (max-width: 900px) {
+  .post-list-box {
+    text-align: left;
+  }
 }
 .post-list__post {
-  border-bottom: 2px solid #3e372d;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+}
+.post-list__date {
+  transition: all 0.15s ease-in;
   font-size: 1.44rem;
   line-height: 1.85rem;
+  font-weight: 100;
 }
-.post-list__archive {
-  float: right;
-  font-size: 1.44rem;
-  line-height: 1.85rem;
+.post-list__title {
+  font-weight: 100;
+  font-size: 2.2rem;
+  line-height: 2.5rem;
 }
-.post-list__heading {
-  text-align: center;
+@media only screen and (min-width: 900px) {
+  .post-list__title {
+    font-size: 2.8rem;
+    line-height: 2.5rem;
+  }
+}
+.latest-post {
+  float: left;
 }
 .hero {
   width: 100%;
@@ -743,6 +752,7 @@ input {
   background: url("/assets/img/zack-desk.jpg");
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 @media only screen and (min-width: 600px) {
   .hero {
@@ -753,6 +763,7 @@ input {
   .hero {
     background-size: cover;
     height: 60rem;
+    height: 100vh;
   }
 }
 .ss-wrapper .animated {
@@ -885,7 +896,7 @@ input {
 }
 .box {
   padding: 0.01rem;
-  background-color: #3e372d;
+  background-color: #fff;
   min-height: 100%;
   min-height: 100vh;
 }
@@ -900,21 +911,9 @@ input {
 }
 .box__content {
   background: #fff;
-  margin: 10rem 1rem 1rem 1rem;
-  max-width: 120rem;
   min-height: 100%;
   min-height: 100vh;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-@media only screen and (min-width: 900px) {
-  .box__content {
-    margin: 10rem 4rem 0 4rem;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .box__content {
-    margin: 10rem auto 0 auto;
-  }
 }
 .eye-box {
   background: #ec407a;
@@ -966,8 +965,7 @@ input {
   clear: both;
 }
 .markdown-image {
-  max-width: none;
-  width: 100%;
+  max-width: 100%;
   line-height: 0;
 }
 .markdown-image img {
@@ -1176,7 +1174,7 @@ input {
 }
 @media only screen and (min-width: 900px) {
   .newsletter-box {
-    height: 40rem;
+    height: 60rem;
   }
 }
 .newsletter-box__inner {
@@ -1217,7 +1215,7 @@ input {
 .accent-line--center {
   height: 1rem;
   width: 14rem;
-  background: #ad4444;
+  background: #48435e;
   margin: 0 auto;
   margin-bottom: 2.5rem;
 }
@@ -1234,4 +1232,7 @@ input {
   margin-left: auto;
   background: #48435e;
   margin-bottom: 2.5rem;
+}
+.hero__text {
+  margin-top: 2.5rem;
 }
