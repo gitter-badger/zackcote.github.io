@@ -1,17 +1,19 @@
 .hire-box
+    text-align center
     background-color color-primary
     color color-background
     {z-transition}
     a
         display block
-        padding space
+        padding 2rem
         &:hover
             color color-background
             text-decoration underline
-    &:hover
-        padding .5rem
     h3
         font-weight 100
         {font-medium}
-        +above(gamma)
+    +above(gamma)
+        h3
             {font-xmedium}
+        padding 4rem
+

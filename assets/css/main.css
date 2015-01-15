@@ -175,6 +175,17 @@ ul,
 ol,
 .highlight {
   margin-bottom: 2.5rem;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 900px) {
+  p,
+  ul,
+  ol,
+  .highlight {
+    margin: 2rem 3rem;
+  }
 }
 ul {
   list-style-position: inside;
@@ -183,14 +194,6 @@ main {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-align: center;
 }
 h1 {
   font-size: 3.8rem;
@@ -205,7 +208,7 @@ h1 {
 h2,
 h3 {
   font-size: 2.8rem;
-  line-height: 2.8rem;
+  line-height: 2.5rem;
 }
 @media only screen and (min-width: 900px) {
   h2,
@@ -261,6 +264,7 @@ p code {
   font-weight: 200;
   background: #48435e;
   display: inline;
+  text-align: center;
   transition: all 0.15s ease-in;
 }
 .button a {
@@ -275,41 +279,26 @@ p code {
   .button {
     width: 100%;
     display: block;
-    text-align: center;
   }
 }
 input {
   font-family: 'sweden_sans', Arial, sans-serif;
   -webkit-appearance: none;
 }
-.accent-line {
-  max-width: 60rem;
-  margin: 0 auto;
+.page-title {
+  margin-bottom: 2rem;
 }
-.accent-line:after {
-  height: 1rem;
-  width: 14rem;
+::-moz-selection {
   background: #ad4444;
-  margin-bottom: 2.5rem;
+  color: #fff;
 }
-.accent-line--alt {
-  max-width: 60rem;
-  margin: 0 auto;
+::selection {
+  background: #ad4444;
+  color: #fff;
 }
-.accent-line--alt:after {
-  height: 1rem;
-  width: 14rem;
-  margin-left: auto;
-  margin-right: 0;
-  background: #3e372d;
-  margin-bottom: 2.5rem;
-}
-p,
-ul,
-ol {
-  max-width: 60rem;
-  margin-left: auto;
-  margin-right: auto;
+::-moz-selection {
+  background: #ad4444;
+  color: #fff;
 }
 .wrapper {
   min-height: 100vh;
@@ -415,12 +404,12 @@ ol {
 }
 .site-title:before {
   content: "{ ";
-  color: #48435e;
+  color: #ad4444;
   font-weight: bold;
 }
 .site-title:after {
   content: " }";
-  color: #48435e;
+  color: #ad4444;
   font-weight: bold;
 }
 .footer {
@@ -712,6 +701,7 @@ ol {
 /* Literal.Number.Integer.Long */
 }
 .post-list {
+  text-align: left;
   list-style: none;
   margin-bottom: 0;
   *zoom: 1;
@@ -726,7 +716,7 @@ ol {
 }
 .post-list__title {
   font-size: 2.8rem;
-  line-height: 2.8rem;
+  line-height: 2.5rem;
 }
 .post-list__date {
   font-size: 1.44rem;
@@ -744,23 +734,25 @@ ol {
   font-size: 1.44rem;
   line-height: 1.85rem;
 }
-.placeholder {
+.post-list__heading {
+  text-align: center;
+}
+.hero {
   width: 100%;
-  height: 27rem;
+  height: 30rem;
   background: url("/assets/img/zack-desk.jpg");
-  background-size: contain;
-  background-position: right;
-  margin-bottom: 1rem;
+  background-size: cover;
+  background-position: center;
 }
 @media only screen and (min-width: 600px) {
-  .placeholder {
-    height: 30rem;
+  .hero {
+    height: 40rem;
   }
 }
 @media only screen and (min-width: 1200px) {
-  .placeholder {
+  .hero {
     background-size: cover;
-    height: 50rem;
+    height: 60rem;
   }
 }
 .ss-wrapper .animated {
@@ -778,17 +770,17 @@ ol {
   -webkit-animation-name: slideInRight;
           animation-name: slideInRight;
 }
-.ss-wrapper .animated--slideInTop {
-  -webkit-animation-name: slideInTop;
-          animation-name: slideInTop;
+.ss-wrapper .animated--fadeInTop {
+  -webkit-animation-name: fadeInTop;
+          animation-name: fadeInTop;
   *zoom: 1;
 }
-.ss-wrapper .animated--slideInTop:before,
-.ss-wrapper .animated--slideInTop:after {
+.ss-wrapper .animated--fadeInTop:before,
+.ss-wrapper .animated--fadeInTop:after {
   content: '';
   display: table;
 }
-.ss-wrapper .animated--slideInTop:after {
+.ss-wrapper .animated--fadeInTop:after {
   clear: both;
 }
 .ss-wrapper.is-exiting .animated {
@@ -837,11 +829,12 @@ ol {
             transform: none;
   }
 }
-@-webkit-keyframes slideInTop {
+@-webkit-keyframes fadeInTop {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-            transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    background: none;
   }
   100% {
     opacity: 1;
@@ -849,11 +842,12 @@ ol {
             transform: none;
   }
 }
-@keyframes slideInTop {
+@keyframes fadeInTop {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-            transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    background: none;
   }
   100% {
     opacity: 1;
@@ -862,6 +856,7 @@ ol {
   }
 }
 .hire-box {
+  text-align: center;
   background-color: #48435e;
   color: #fff;
   transition: all 0.15s ease-in;
@@ -874,23 +869,25 @@ ol {
   color: #fff;
   text-decoration: underline;
 }
-.hire-box:hover {
-  padding: 0.5rem;
-}
 .hire-box h3 {
   font-weight: 100;
   font-size: 2.2rem;
   line-height: 2.5rem;
 }
 @media only screen and (min-width: 1200px) {
+  .hire-box {
+    padding: 4rem;
+  }
   .hire-box h3 {
     font-size: 2.8rem;
-    line-height: 2.8rem;
+    line-height: 2.5rem;
   }
 }
 .box {
-  padding: 0.1rem;
+  padding: 0.01rem;
   background-color: #3e372d;
+  min-height: 100%;
+  min-height: 100vh;
 }
 .box__title {
   margin-bottom: 1rem;
@@ -903,9 +900,21 @@ ol {
 }
 .box__content {
   background: #fff;
-  margin: 0 auto;
-  margin-top: 10rem;
+  margin: 10rem 1rem 1rem 1rem;
   max-width: 120rem;
+  min-height: 100%;
+  min-height: 100vh;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+@media only screen and (min-width: 900px) {
+  .box__content {
+    margin: 10rem 4rem 0 4rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .box__content {
+    margin: 10rem auto 0 auto;
+  }
 }
 .eye-box {
   background: #ec407a;
@@ -943,10 +952,6 @@ ol {
   color: #787099;
   margin-bottom: 1rem;
 }
-.post__content img {
-  width: 100%;
-  margin-bottom: 2rem;
-}
 .post__header {
   margin-top: 2rem;
   text-align: center;
@@ -959,6 +964,29 @@ ol {
 }
 .post__header:after {
   clear: both;
+}
+.markdown-image {
+  max-width: none;
+  width: 100%;
+  line-height: 0;
+}
+.markdown-image img {
+  width: 100%;
+}
+.markdown-image:last-of-type {
+  margin-bottom: 0;
+}
+.post__content h1,
+.post__content h2,
+.post__content h4,
+.post__content h5,
+.post__content h6 {
+  text-align: center;
+}
+.post__content .button {
+  display: block;
+  margin: 2rem auto;
+  width: 15rem;
 }
 .case-studies-title {
   position: absolute;
@@ -978,6 +1006,7 @@ ol {
   margin-left: 0%;
   margin-right: 0%;
   color: #fff;
+  text-align: left;
 }
 .case-studies-box:before,
 .case-studies-box:after {
@@ -1075,39 +1104,64 @@ ol {
   left: 2rem;
   opacity: 0;
   z-index: 1000;
+  padding-right: 2rem;
   transition: all 0.15s ease-in;
   font-size: 1.44rem;
   line-height: 1.85rem;
+}
+.case-content h3 {
+  font-size: 1.8rem;
+  line-height: 2.799999999rem;
 }
 @media only screen and (max-width: 900px) {
   .case-content {
     opacity: 1;
   }
 }
-.case-content h3 {
-  margin-bottom: 1rem;
-}
 @media only screen and (min-width: 900px) {
   .case-content {
     font-size: 2.2rem;
     line-height: 2.5rem;
   }
+  .case-content h3 {
+    margin-bottom: 1rem;
+    text-align: left;
+    font-size: 2.8rem;
+    line-height: 2.5rem;
+  }
 }
-.active > .case-content {
-  bottom: 2rem;
-  opacity: 1;
+@media only screen and (min-width: 900px) {
+  .active > .case-content {
+    bottom: 2rem;
+    opacity: 1;
+  }
 }
 .newsletter-box {
   *zoom: 1;
   position: relative;
   clear: both;
   color: #fff;
-  padding: 2rem;
   background-color: #ad4444;
-  background: linear-gradient(to right, rgba(173,68,68,0) 0%, #ad4444 60%, #ad4444 100%), url("/assets/img/zack-flower2.jpg") no-repeat;
-  background-size: 100% 100%, auto 100%;
+  background-size: auto 100%;
   background-position: left top;
-  text-align: center;
+  background: url("/assets/img/zack-flower2.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: right;
+}
+@media only screen and (max-width: 600px) {
+  .newsletter-box {
+    background-size: auto 100%;
+    background-position: left;
+  }
+  .newsletter-box:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: #ad4444;
+  }
 }
 .newsletter-box:before,
 .newsletter-box:after {
@@ -1117,24 +1171,33 @@ ol {
 .newsletter-box:after {
   clear: both;
 }
+.newsletter-box h2 {
+  text-align: right;
+}
 @media only screen and (min-width: 900px) {
   .newsletter-box {
     height: 40rem;
-    background: url("/assets/img/zack-flower2.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
   }
 }
 .newsletter-box__inner {
-  position: absolute;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  max-width: 60rem;
+  padding: 2rem;
+}
+.newsletter-box__inner p {
+  margin-right: 0;
+}
+@media only screen and (min-width: 600px) {
+  .newsletter-box__inner {
+    max-width: 40rem;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 6rem;
+    float: right;
+  }
 }
 .email {
   border: none;
@@ -1151,23 +1214,24 @@ ol {
     width: 25rem;
   }
 }
-.page-title {
-  margin-bottom: 2rem;
-}
-::-moz-selection {
+.accent-line--center {
+  height: 1rem;
+  width: 14rem;
   background: #ad4444;
-  color: #fff;
+  margin: 0 auto;
+  margin-bottom: 2.5rem;
 }
-::selection {
+.accent-line {
+  height: 1rem;
+  width: 14rem;
   background: #ad4444;
-  color: #fff;
+  margin-bottom: 2.5rem;
+  margin-right: auto;
 }
-::-moz-selection {
-  background: #ad4444;
-  color: #fff;
-}
-@media only screen and (min-width: 1200px) {
-  .hero__text {
-    margin-bottom: 0;
-  }
+.accent-line--alt {
+  height: 1rem;
+  width: 14rem;
+  margin-left: auto;
+  background: #48435e;
+  margin-bottom: 2.5rem;
 }

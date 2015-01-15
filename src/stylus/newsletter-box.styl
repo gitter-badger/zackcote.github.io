@@ -1,23 +1,40 @@
 .newsletter-box
+    +below(alpha)
+        background-size auto 100%
+        background-position left
+        &:after
+            content " "
+            width 100%
+            height 100%
+            position absolute
+            top 0
+            background alpha(color-accent, 1)
     cf()
     position relative
     clear both
     color color-background
-    padding space
     background-color color-accent
-    background linear-gradient(to right, rgba(173, 68, 68, 0) 0%, rgba(173, 68, 68, 1) 60%, rgba(173, 68, 68,1) 100%), url('/assets/img/zack-flower2.jpg') no-repeat
-    background-size 100% 100%, auto 100%
+    background-size auto 100%
     background-position left top
-    text-align center
+    background url('/assets/img/zack-flower2.jpg') no-repeat
+    background-size cover
+    background-position center
+    text-align right
+    h2
+        text-align right
     +above(beta)
         height 40rem
-        background url('/assets/img/zack-flower2.jpg') no-repeat
-        background-size cover
-        background-position center
 
 .newsletter-box__inner
-    align(both)
-    max-width 60rem
+    padding 2rem
+    p
+        margin-right 0
+    +above(alpha)
+        max-width 40rem
+        align(vertical)
+        right 6rem
+        float right
+
 
 .email
     border none

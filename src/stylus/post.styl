@@ -2,11 +2,24 @@
     color color-primary--light
     margin-bottom 1rem
 
-.post__content img
-    width 100%
-    margin-bottom 2rem
-
 .post__header
     margin-top 2rem
     text-align center
     cf()
+
+.markdown-image
+    max-width none
+    width 100%
+    line-height 0
+    img
+        width 100%
+    &:last-of-type
+        margin-bottom 0
+
+.post__content
+    h1,h2,h2,h4,h5,h6
+        text-align center
+    .button
+        display block
+        margin 2rem auto
+        width 15rem

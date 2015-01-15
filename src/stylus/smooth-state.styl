@@ -9,8 +9,8 @@
 .ss-wrapper .animated--slideInRight
   animation-name slideInRight
 
-.ss-wrapper .animated--slideInTop
-  animation-name slideInTop
+.ss-wrapper .animated--fadeInTop
+  animation-name fadeInTop
   cf()
 
 .ss-wrapper.is-exiting .animated
@@ -31,10 +31,11 @@
         opacity 1
         transform none
 
-@keyframes slideInTop
+@keyframes fadeInTop
     0%
         opacity 0
-        transform translate3d(0, -100%, 0);
+        transform translate3d(0, 100%, 0)
+        background none
     100%
         opacity 1
         transform none

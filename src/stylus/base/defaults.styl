@@ -13,15 +13,17 @@ img
 
 p, ul, ol, .highlight
     margin-bottom 2.5rem
+    max-width 60rem
+    margin-left auto
+    margin-right auto
+    +below(beta)
+        margin 2rem 3rem
 
 ul
     list-style-position inside
 
 main
     flex 1
-
-h1, h2, h3, h4, h5, h6
-    text-align center
 
 h1
     {font-large}
@@ -67,6 +69,7 @@ p code
     font-weight 200
     background color-primary
     display inline
+    text-align center
     {z-transition}
     a
         color color-background
@@ -77,33 +80,18 @@ p code
     +below(beta)
         width 100%
         display block
-        text-align center
 
 input
     font-family 'sweden_sans', Arial, sans-serif
     -webkit-appearance none
 
-.accent-line
-    max-width 60rem
-    margin 0 auto
-    &:after
-        height 1rem
-        width 14rem
-        background color-accent
-        margin-bottom 2.5rem
+.page-title
+    margin-bottom space
 
-.accent-line--alt
-    max-width 60rem
-    margin 0 auto
-    &:after
-        height 1rem
-        width 14rem
-        margin-left auto
-        margin-right 0
-        background color-secondary
-        margin-bottom 2.5rem
+::selection
+  background color-accent
+  color color-background
 
-p, ul, ol
-    max-width 60rem
-    margin-left auto
-    margin-right auto
+::-moz-selection
+  background color-accent
+  color color-background
